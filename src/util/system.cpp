@@ -75,7 +75,7 @@
 const int64_t nStartupTime = GetTime();
 
 const char * const BITCOIN_CONF_FILENAME = "vpub.conf";
-const char * const BITCOIN_PID_FILENAME = "particld.pid";
+const char * const BITCOIN_PID_FILENAME = "vpubd.pid";
 
 bool fParticlMode = true;
 bool fParticlWallet = false;
