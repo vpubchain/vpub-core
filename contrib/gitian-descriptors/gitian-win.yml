@@ -24,7 +24,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/John-Tonny/particl-core.git"
+- "url": "https://github.com/vpubchain/particl-core.git"
   "dir": "particl-core"
 files: []
 script: |
