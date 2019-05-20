@@ -23,9 +23,9 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/particl/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/gitian.sigs.git'])
     if not os.path.isdir('particl-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/particl/particl-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/particl-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('vpub-core'):
