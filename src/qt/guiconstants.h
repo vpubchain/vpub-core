@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Vpub"
-#define QAPP_ORG_DOMAIN "particl.io"
+#define QAPP_ORG_DOMAIN "vpub.io"
 #define QAPP_APP_NAME_DEFAULT "Vpub-Qt"
 #define QAPP_APP_NAME_TESTNET "Vpub-Qt-testnet"
 #define QAPP_APP_NAME_REGTEST "Vpub-Qt-regtest"
