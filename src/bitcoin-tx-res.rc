@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Particl"
-            VALUE "FileDescription",    "particl-tx (CLI Particl transaction editor utility)"
+            VALUE "CompanyName",        "Vpub"
+            VALUE "FileDescription",    "particl-tx (CLI Vpub transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "particl-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

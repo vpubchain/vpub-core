@@ -1,5 +1,5 @@
 [Unit]
-Description=Particl daemon
+Description=Vpub daemon
 After=network.target
 
 [Service]
@@ -8,10 +8,10 @@ Group=particl
 
 Type=forking
 PIDFile=/home/particl/.particl/particld.pid
-ExecStart=/home/particl/Particl/particld -daemon -pid=/home/particl/.particl/particld.pid \
+ExecStart=/home/particl/Vpub/particld -daemon -pid=/home/particl/.particl/particld.pid \
 -conf=/home/particl/.particl/particl.conf -datadir=/home/particl/.particl
 
-ExecStop=/home/particl/Particl/particl-cli -conf=/home/particl/.particl/particl.conf stop
+ExecStop=/home/particl/Vpub/particl-cli -conf=/home/particl/.particl/particl.conf stop
 ExecStop=/usr/bin/sleep 25
 
 Restart=no

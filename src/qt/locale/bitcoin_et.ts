@@ -66,12 +66,12 @@
         <translation>Vastuvõtvad aadressid</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Need on sinu Particl aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
+        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Need on sinu Vpub aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Need on sinu Particl aadressid sisenevate maksete vastu võtmiseks. Soovitav on iga tehingu tarbeks kasutada uut aadressi.</translation>
+        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Need on sinu Vpub aadressid sisenevate maksete vastu võtmiseks. Soovitav on iga tehingu tarbeks kasutada uut aadressi.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -294,8 +294,8 @@
         <translation>Kettal olevate blokkide re-indekseerimine...</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation>Saada münte Particl. aadressile</translation>
+        <source>Send coins to a Vpub address</source>
+        <translation>Saada münte Vpub. aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -318,8 +318,8 @@
         <translation>&amp;Kontrolli sõnumit...</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -346,12 +346,12 @@
         <translation>Krüpteeri oma rahakoti privaatvõtmed</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Particl. aadressiga</translation>
+        <source>Sign messages with your Vpub addresses to prove you own them</source>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Vpub. aadressiga</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Particl. aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Vpub. aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -382,8 +382,8 @@
         <translation>Käsurea valikud</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network</source>
-        <translation><numerusform>%n aktiivne ühendus Particl. võrku</numerusform><numerusform>%n aktiivset ühendust Particl. võrku</numerusform></translation>
+        <source>%n active connection(s) to Vpub network</source>
+        <translation><numerusform>%n aktiivne ühendus Vpub. võrku</numerusform><numerusform>%n aktiivset ühendust Vpub. võrku</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -626,8 +626,8 @@
         <translation>Muuda saatvat aadressi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation>Sisestatud aadress "%1" ei ole korrektne Particl aadress.</translation>
+        <source>The entered address "%1" is not a valid Vpub address.</source>
+        <translation>Sisestatud aadress "%1" ei ole korrektne Vpub aadress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -663,8 +663,8 @@
         <translation>Teretulemast</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -740,8 +740,8 @@
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Particl. kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Vpub. kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -839,7 +839,7 @@
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
         <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Bitconi võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
@@ -1345,8 +1345,8 @@
         <translation>Maksepäring aegunud.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation>Hoiatus: Ebakorrektne Particl aadress</translation>
+        <source>Warning: Invalid Vpub address</source>
+        <translation>Hoiatus: Ebakorrektne Vpub aadress</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1429,8 +1429,8 @@
         <translation>&amp;Allkirjastamise teade</translation>
     </message>
     <message>
-        <source>The Particl address to sign the message with</source>
-        <translation>Particl aadress millega sõnum allkirjastada</translation>
+        <source>The Vpub address to sign the message with</source>
+        <translation>Vpub aadress millega sõnum allkirjastada</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1461,8 +1461,8 @@
         <translation>Kopeeri praegune signatuur vahemällu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation>Allkirjasta sõnum Particl. aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this Vpub address</source>
+        <translation>Allkirjasta sõnum Vpub. aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1481,12 +1481,12 @@
         <translation>&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation>Particl aadress millega sõnum on allkirjastatud</translation>
+        <source>The Vpub address the message was signed with</source>
+        <translation>Vpub aadress millega sõnum on allkirjastatud</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Particl. aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Vpub. aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1918,8 +1918,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Particl Core</source>
-        <translation>Particl. tuumik</translation>
+        <source>Vpub Core</source>
+        <translation>Vpub. tuumik</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>

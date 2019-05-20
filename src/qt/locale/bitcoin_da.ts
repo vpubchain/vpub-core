@@ -66,12 +66,12 @@
         <translation>Modtagelsesadresser</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Disse er dine Particl-adressr til afsendelse af betalinger. Tjek altid beløb og modtagelsesadresse, inden du sender particl.</translation>
+        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Disse er dine Vpub-adressr til afsendelse af betalinger. Tjek altid beløb og modtagelsesadresse, inden du sender particl.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dette er dine Particl-adressr til modtagelse af betalinger. Det anbefales at bruge en ny modtagelsesadresse for hver transaktion.</translation>
+        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dette er dine Vpub-adressr til modtagelse af betalinger. Det anbefales at bruge en ny modtagelsesadresse for hver transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -358,8 +358,8 @@
         <translation>Proxy er &lt;b&gt;aktiveret&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation>Send particl til en Particl-adress</translation>
+        <source>Send coins to a Vpub address</source>
+        <translation>Send particl til en Vpub-adress</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -382,8 +382,8 @@
         <translation>&amp;Verificér besked…</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -410,12 +410,12 @@
         <translation>Kryptér de private nøgler, der hører til din tegnebog</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation>Signér beskeder med dine Particl-adressr for at bevise, at de tilhører dig</translation>
+        <source>Sign messages with your Vpub addresses to prove you own them</source>
+        <translation>Signér beskeder med dine Vpub-adressr for at bevise, at de tilhører dig</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation>Verificér beskeder for at sikre, at de er signeret med de angivne Particl-adressr</translation>
+        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
+        <translation>Verificér beskeder for at sikre, at de er signeret med de angivne Vpub-adressr</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -454,8 +454,8 @@
         <translation>Tilvalg for &amp;kommandolinje</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network</source>
-        <translation><numerusform>%n aktiv forbindelse til Particl.netværket</numerusform><numerusform>%n aktive forbindelser til Particl.netværket</numerusform></translation>
+        <source>%n active connection(s) to Vpub network</source>
+        <translation><numerusform>%n aktiv forbindelse til Vpub.netværket</numerusform><numerusform>%n aktive forbindelser til Vpub.netværket</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -498,8 +498,8 @@
         <translation>Opdateret</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation>Vis %1 hjælpebesked for at få en liste over mulige tilvalg for Particl kommandolinje</translation>
+        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
+        <translation>Vis %1 hjælpebesked for at få en liste over mulige tilvalg for Vpub kommandolinje</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -574,8 +574,8 @@
         <translation>Tegnebog er &lt;b&gt;krypteret&lt;/b&gt; og i øjeblikket &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Particl can no longer continue safely and will quit.</source>
-        <translation>Der opstod en fatal fejl. Particl kan ikke længere fortsætte sikkert og vil afslutte.</translation>
+        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
+        <translation>Der opstod en fatal fejl. Vpub kan ikke længere fortsætte sikkert og vil afslutte.</translation>
     </message>
 </context>
 <context>
@@ -764,8 +764,8 @@
         <translation>Redigér afsendelsesadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation>Den indtastede adresse “%1” er ikke en gyldig Particl-adress.</translation>
+        <source>The entered address "%1" is not a valid Vpub address.</source>
+        <translation>Den indtastede adresse “%1” er ikke en gyldig Vpub-adress.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -861,8 +861,8 @@
         <translation>Brug tilpasset mappe for data:</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -873,8 +873,8 @@
         <translation>Omtrent %1 GB data vil blive gemt i denne mappe.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation>%1 vil downloade og gemme en kopi af Particl.blokkæden.</translation>
+        <source>%1 will download and store a copy of the Vpub block chain.</source>
+        <translation>%1 vil downloade og gemme en kopi af Vpub.blokkæden.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1094,8 +1094,8 @@
         <translation>&amp;Brug ubekræftede byttepenge</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åbn automatisk Particl.klientens port på routeren. Dette virker kun, når din router understøtter UPnP, og UPnP er aktiveret.</translation>
+        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åbn automatisk Vpub.klientens port på routeren. Dette virker kun, når din router understøtter UPnP, og UPnP er aktiveret.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1110,8 +1110,8 @@
         <translation>Tillad &amp;indkommende forbindelser</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation>Forbind til Particl.netværket gennem en SOCKS5-proxy.</translation>
+        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
+        <translation>Forbind til Vpub.netværket gennem en SOCKS5-proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1146,8 +1146,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Forbind til Particl.netværket gennem en separat SOCKS5-proxy for Tors skjulte tjenester.</translation>
+        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Forbind til Vpub.netværket gennem en separat SOCKS5-proxy for Tors skjulte tjenester.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1253,8 +1253,8 @@
         <translation>Formular</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den viste information kan være forældet. Din tegnebog synkroniserer automatisk med Particl.netværket, når en forbindelse etableres, men denne proces er ikke gennemført endnu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den viste information kan være forældet. Din tegnebog synkroniserer automatisk med Vpub.netværket, når en forbindelse etableres, men denne proces er ikke gennemført endnu.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1348,8 +1348,8 @@
         <translation>Ugyldig betalingsadresse %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig Particl-adress eller forkert udformede URL-parametre.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Vpub address or malformed URI parameters.</source>
+        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig Vpub-adress eller forkert udformede URL-parametre.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1450,8 +1450,8 @@
         <translation>Beløb</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation>Indtast en Particl-adress (fx %1)</translation>
+        <source>Enter a Vpub address (e.g. %1)</source>
+        <translation>Indtast en Vpub-adress (fx %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1898,8 +1898,8 @@
         <translation>&amp;Besked:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation>En valgfri besked, der føjes til betalingsanmodningen, og som vil vises, når anmodningen åbnes. Bemærk: Beskeden vil ikke sendes sammen med betalingen over Particl.netværket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vpub network.</source>
+        <translation>En valgfri besked, der føjes til betalingsanmodningen, og som vil vises, når anmodningen åbnes. Bemærk: Beskeden vil ikke sendes sammen med betalingen over Vpub.netværket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2331,8 +2331,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation><numerusform>Bekræftelse estimeret til at begynde om %n blok.</numerusform><numerusform>Bekræftelse estimeret til at begynde om %n blokke.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation>Advarsel: Ugyldig Particl-adress</translation>
+        <source>Warning: Invalid Vpub address</source>
+        <translation>Advarsel: Ugyldig Vpub-adress</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2374,8 +2374,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Dette er en normal betaling.</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation>Particl-adress, som betalingen skal sendes til</translation>
+        <source>The Vpub address to send the payment to</source>
+        <translation>Vpub-adress, som betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2422,8 +2422,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Indtast et mærkat for denne adresse for at føje den til listen over brugte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation>En besked, som blev føjet til “bitcon:”-URI'en, som vil gemmes med transaktionen til din reference. Bemærk: Denne besked vil ikke blive sendt over Particl.netværket.</translation>
+        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <translation>En besked, som blev føjet til “bitcon:”-URI'en, som vil gemmes med transaktionen til din reference. Bemærk: Denne besked vil ikke blive sendt over Vpub.netværket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2471,8 +2471,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Du kan signere beskeder/aftaler med dine adresser for at bevise, at du kan modtage particl, der bliver sendt til adresserne. Vær forsigtig med ikke at signere noget vagt eller tilfældigt, da eventuelle phishing-angreb kan snyde dig til at overlade din identitet til dem. Signér kun fuldt ud detaljerede udsagn, som du er enig i.</translation>
     </message>
     <message>
-        <source>The Particl address to sign the message with</source>
-        <translation>Particl-adress, som beskeden skal signeres med</translation>
+        <source>The Vpub address to sign the message with</source>
+        <translation>Vpub-adress, som beskeden skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2503,8 +2503,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Kopiér den nuværende signatur til systemets udklipsholder</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation>Signér denne besked for at bevise, at Particl-adressn tilhører dig</translation>
+        <source>Sign the message to prove you own this Vpub address</source>
+        <translation>Signér denne besked for at bevise, at Vpub-adressn tilhører dig</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2527,12 +2527,12 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Indtast modtagerens adresse, besked (vær sikker på at kopiere linjeskift, mellemrum, tabuleringer, etc. præcist) og signatur herunder for at verificere beskeden. Vær forsigtig med ikke at læse noget ud fra signaturen, som ikke står i selve beskeden, for at undgå at blive snydt af et eventuelt man-in-the-middle-angreb. Bemærk, at dette kun beviser, at den signerende person kan modtage med adressen; det kan ikke bevise hvem der har sendt en given transaktion!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation>Particl-adressn, som beskeden blev signeret med</translation>
+        <source>The Vpub address the message was signed with</source>
+        <translation>Vpub-adressn, som beskeden blev signeret med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation>Verificér beskeden for at sikre, at den er signeret med den angivne Particl-adress</translation>
+        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
+        <translation>Verificér beskeden for at sikre, at den er signeret med den angivne Vpub-adress</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3180,8 +3180,8 @@ Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satos
         <translation>Kunne ikke starte HTTP-server. Se fejlretningslog for detaljer.</translation>
     </message>
     <message>
-        <source>Particl Core</source>
-        <translation>Particl Core</translation>
+        <source>Vpub Core</source>
+        <translation>Vpub Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

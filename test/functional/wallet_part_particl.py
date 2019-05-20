@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2019 The Particl Core developers
+# Copyright (c) 2017-2019 The Vpub Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -325,7 +325,7 @@ class WalletParticlTest(ParticlTestFramework):
 
         Bitcoin Testnet
         Purpose: 44
-        Coin: 1 (Particl testnet)
+        Coin: 1 (Vpub testnet)
         Account: 0
         Ext/Internal: 0
 

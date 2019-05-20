@@ -89,7 +89,7 @@ src/qt/particl-qt.includes
 *.qm
 Makefile
 particl-qt
-Particl-Qt.app
+Vpub-Qt.app
 background.tiff*
 
 # Unit-tests

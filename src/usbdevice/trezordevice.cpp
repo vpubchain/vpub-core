@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Particl Core developers
+// Copyright (c) 2018 The Vpub Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -653,7 +653,7 @@ int CTrezorDevice::CompleteTransaction(CMutableTransaction *tx)
 
 std::string CTrezorDevice::GetCoinName()
 {
-    return Params().NetworkIDString() == "main" ? "Particl" : "Particl Testnet";
+    return Params().NetworkIDString() == "main" ? "Vpub" : "Vpub Testnet";
 };
 
 int CTrezorDevice::LoadMnemonic(uint32_t wordcount, bool pinprotection, std::string &sError)

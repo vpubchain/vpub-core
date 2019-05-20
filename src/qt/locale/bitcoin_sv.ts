@@ -66,12 +66,12 @@
         <translation>Mottagaradresser</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Detta är dina Particl-adressr för att skicka betalningar. Kontrollera alltid summan och den mottagande adressen innan du skickar particl.</translation>
+        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Detta är dina Vpub-adressr för att skicka betalningar. Kontrollera alltid summan och den mottagande adressen innan du skickar particl.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Detta är dina Particl-adressr för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
+        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Detta är dina Vpub-adressr för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -359,8 +359,8 @@ Var vänlig och försök igen.</translation>
         <translation>Proxy är &lt;b&gt; aktiverad &lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation>Skicka particl till en Particl.adress</translation>
+        <source>Send coins to a Vpub address</source>
+        <translation>Skicka particl till en Vpub.adress</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -383,8 +383,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Verifiera meddelande...</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -411,12 +411,12 @@ Var vänlig och försök igen.</translation>
         <translation>Kryptera de privata nycklar som tillhör din plånbok</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation>Signera meddelanden med dina Particl-adressr för att bevisa att du äger dem</translation>
+        <source>Sign messages with your Vpub addresses to prove you own them</source>
+        <translation>Signera meddelanden med dina Vpub-adressr för att bevisa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Particl-adressr</translation>
+        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
+        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Vpub-adressr</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -455,8 +455,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Kommandoradsalternativ</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network</source>
-        <translation><numerusform>%n aktiva anslutningar till Particl.nätverket.</numerusform><numerusform>%n aktiva anslutningar till Particl.nätverket.</numerusform></translation>
+        <source>%n active connection(s) to Vpub network</source>
+        <translation><numerusform>%n aktiva anslutningar till Vpub.nätverket.</numerusform><numerusform>%n aktiva anslutningar till Vpub.nätverket.</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -499,8 +499,8 @@ Var vänlig och försök igen.</translation>
         <translation>Uppdaterad</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Particl kommandoradsalternativ.</translation>
+        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
+        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Vpub kommandoradsalternativ.</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -575,8 +575,8 @@ Var vänlig och försök igen.</translation>
         <translation>Denna plånbok är &lt;b&gt;krypterad&lt;/b&gt; och för närvarande &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Particl can no longer continue safely and will quit.</source>
-        <translation>Ett kritiskt fel uppstod. Particl kan inte fortsätta att köra säkert och kommer att avslutas.</translation>
+        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
+        <translation>Ett kritiskt fel uppstod. Vpub kan inte fortsätta att köra säkert och kommer att avslutas.</translation>
     </message>
 </context>
 <context>
@@ -765,8 +765,8 @@ Var vänlig och försök igen.</translation>
         <translation>Redigera avsändaradress</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation>Den angivna adressen "%1" är inte en giltig Particl.adress.</translation>
+        <source>The entered address "%1" is not a valid Vpub address.</source>
+        <translation>Den angivna adressen "%1" är inte en giltig Vpub.adress.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -862,8 +862,8 @@ Var vänlig och försök igen.</translation>
         <translation>Använd en anpassad datakatalog:</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -874,8 +874,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ungefär %1 GB data kommer att lagras i den här katalogen.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation>%1 kommer att ladda ner och lagra en kopia av Particl.blockkedjan.</translation>
+        <source>%1 will download and store a copy of the Vpub block chain.</source>
+        <translation>%1 kommer att ladda ner och lagra en kopia av Vpub.blockkedjan.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -906,7 +906,7 @@ Var vänlig och försök igen.</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation>Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserat klart med Particl.nätverket enligt detaljer nedan.</translation>
+        <translation>Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserat klart med Vpub.nätverket enligt detaljer nedan.</translation>
     </message>
     <message>
         <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1095,8 +1095,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Spendera obekräftad växel</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Particl.klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
+        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt Vpub.klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1111,8 +1111,8 @@ Var vänlig och försök igen.</translation>
         <translation>Tillåt ankommande anslutningar</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation>Anslut till Particl.nätverket genom en SOCKS5-proxy.</translation>
+        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
+        <translation>Anslut till Vpub.nätverket genom en SOCKS5-proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1147,8 +1147,8 @@ Var vänlig och försök igen.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Anslut till Particl.nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
+        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Anslut till Vpub.nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1254,8 +1254,8 @@ Var vänlig och försök igen.</translation>
         <translation>Formulär</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Particl.nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Vpub.nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1349,8 +1349,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ogiltig betalningsadress %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation>URI kan inte parsas! Detta kan orsakas av en ogiltig Particl.adress eller felaktiga URI-parametrar.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Vpub address or malformed URI parameters.</source>
+        <translation>URI kan inte parsas! Detta kan orsakas av en ogiltig Vpub.adress eller felaktiga URI-parametrar.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1451,8 +1451,8 @@ Var vänlig och försök igen.</translation>
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation>Ange en Particl.adress (t.ex. %1)</translation>
+        <source>Enter a Vpub address (e.g. %1)</source>
+        <translation>Ange en Vpub.adress (t.ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1899,8 +1899,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Meddelande:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation>Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Particl.nätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vpub network.</source>
+        <translation>Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Vpub.nätverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2332,8 +2332,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation><numerusform>Uppskattas till att påbörja bekräftelse inom %n block.</numerusform><numerusform>Uppskattas till att påbörja bekräftelse inom %n block.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation>Varning: Ogiltig Particl.adress</translation>
+        <source>Warning: Invalid Vpub address</source>
+        <translation>Varning: Ogiltig Vpub.adress</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2375,8 +2375,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Detta är en normal betalning.</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation>Particl.adress att sända betalning till</translation>
+        <source>The Vpub address to send the payment to</source>
+        <translation>Vpub.adress att sända betalning till</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2423,8 +2423,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Ange en etikett för denna adress för att lägga till den i listan med använda adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation>Ett meddelande som bifogades particl: -URIn och som lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Particl.nätverket.</translation>
+        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <translation>Ett meddelande som bifogades particl: -URIn och som lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Vpub.nätverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2472,8 +2472,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Du kan signera meddelanden/avtal med dina adresser för att bevisa att du kan ta emot particl som skickats till dem. Var försiktig så du inte signerar något oklart eller konstigt, eftersom phishing-angrepp kan försöka få dig att signera över din identitet till dem. Signera endast väldetaljerade meddelanden som du godkänner.</translation>
     </message>
     <message>
-        <source>The Particl address to sign the message with</source>
-        <translation>Particl.adress att signera meddelandet med</translation>
+        <source>The Vpub address to sign the message with</source>
+        <translation>Vpub.adress att signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2504,8 +2504,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Kopiera signaturen till systemets Urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Particl.adress</translation>
+        <source>Sign the message to prove you own this Vpub address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna Vpub.adress</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2528,12 +2528,12 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Ange mottagarens adress, meddelande (kopiera radbrytningar, mellanslag, TAB-tecken, osv. exakt) och signatur nedan, för att verifiera meddelandet. Undvik att läsa in mera information i signaturen än vad som stod i själva det signerade meddelandet, för att undvika ett man-in-the-middle-angrepp. Notera att detta endast bevisar att den signerande parten tar emot med adressen, det bevisar inte vem som skickat transaktionen!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation>Particl.adress som meddelandet signerades med</translation>
+        <source>The Vpub address the message was signed with</source>
+        <translation>Vpub.adress som meddelandet signerades med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Particl.adress</translation>
+        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
+        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Vpub.adress</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3072,7 +3072,7 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Skicka Particl.</translation>
+        <translation>Skicka Vpub.</translation>
     </message>
     <message>
         <source>Fee bump error</source>
@@ -3181,8 +3181,8 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
         <translation>Kunde inte starta HTTP-server. Se avlusningsloggen för detaljer.</translation>
     </message>
     <message>
-        <source>Particl Core</source>
-        <translation>Particl Core</translation>
+        <source>Vpub Core</source>
+        <translation>Vpub Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Particl-Qt</string>
+  <string>Vpub-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Particl-Qt</string>
+  <string>Vpub-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.particlfoundation.Particl-Qt</string>
+  <string>io.particlfoundation.Vpub-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.particl.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Particl payment request</string>
+      <string>Vpub payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

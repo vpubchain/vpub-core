@@ -151,7 +151,7 @@ std::shared_ptr<CWallet> LoadWallet(interfaces::Chain& chain, const WalletLocati
 
     if (fParticlMode) {
         if (!((CHDWallet*)wallet.get())->Initialise()) {
-            error = "Particl wallet initialise failed.";
+            error = "Vpub wallet initialise failed.";
             return nullptr;
         }
         RestartStakingThreads();

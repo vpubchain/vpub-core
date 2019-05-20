@@ -66,12 +66,12 @@
         <translation>Indirizzi riceventi</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono i suoi indirizzi Particl per ricevere i pagamenti. Controlla sempre l'importo e gli indirizzi prima di inviare i coins.</translation>
+        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono i suoi indirizzi Vpub per ricevere i pagamenti. Controlla sempre l'importo e gli indirizzi prima di inviare i coins.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono i tuoi indirizzi Particl per ricevere i pagamenti. Si raccomanda di usare un nuovo indirizzo per ogni transazione.</translation>
+        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono i tuoi indirizzi Vpub per ricevere i pagamenti. Si raccomanda di usare un nuovo indirizzo per ogni transazione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -350,8 +350,8 @@
         <translation>Reindicizzazione dei blocchi sul disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation>Invia monete ad un indirizzo Particl...</translation>
+        <source>Send coins to a Vpub address</source>
+        <translation>Invia monete ad un indirizzo Vpub...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -374,8 +374,8 @@
         <translation>Verifica messaggio...</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -402,12 +402,12 @@
         <translation>Cripta le chiavi private che appartengono al tuo portafoglio</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation>Firma messaggi con i tuoi indirizzi Particl per provare che li possiedi</translation>
+        <source>Sign messages with your Vpub addresses to prove you own them</source>
+        <translation>Firma messaggi con i tuoi indirizzi Vpub per provare che li possiedi</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation>Verifica messaggi per accertarti che siano firmati dagli indirizzi Particl specificati</translation>
+        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
+        <translation>Verifica messaggi per accertarti che siano firmati dagli indirizzi Vpub specificati</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -482,8 +482,8 @@
         <translation>Aggiornato</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation>Mostra il %1 messaggio d'aiuto per ottenere una lista con le possibili opzioni per la riga di comando di Particl.</translation>
+        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
+        <translation>Mostra il %1 messaggio d'aiuto per ottenere una lista con le possibili opzioni per la riga di comando di Vpub.</translation>
     </message>
     <message>
         <source>Date: %1
@@ -524,8 +524,8 @@
         <translation>Transazione in arrivo</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Particl can no longer continue safely and will quit.</source>
-        <translation>Si è verificato un errore fatale. Particl non può continuare in maniera sicura e sarà chiuso.</translation>
+        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
+        <translation>Si è verificato un errore fatale. Vpub non può continuare in maniera sicura e sarà chiuso.</translation>
     </message>
 </context>
 <context>
@@ -698,8 +698,8 @@
         <translation>Modifica l'indirizzo di invio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation>L'indirizzo inserito "%1" non è un indirizzo Particl valido.</translation>
+        <source>The entered address "%1" is not a valid Vpub address.</source>
+        <translation>L'indirizzo inserito "%1" non è un indirizzo Vpub valido.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -755,8 +755,8 @@
         <translation>Benvenuto</translation>
     </message>
     <message>
-        <source>Particl.</source>
-        <translation>Particl.</translation>
+        <source>Vpub.</source>
+        <translation>Vpub.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
