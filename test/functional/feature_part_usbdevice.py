@@ -37,7 +37,7 @@ class USBDeviceTest(ParticlTestFramework):
 
     def run_test(self):
 
-        # Check that particl has been built with USB device enabled
+        # Check that vpub has been built with USB device enabled
         config = configparser.ConfigParser()
         if not self.options.configfile:
             self.options.configfile = os.path.dirname(__file__) + "/../config.ini"

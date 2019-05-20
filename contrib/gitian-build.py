@@ -24,8 +24,8 @@ def setup():
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/gitian.sigs.git'])
-    if not os.path.isdir('particl-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/particl-detached-sigs.git'])
+    if not os.path.isdir('vpub-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/vpub-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('vpub-core'):
@@ -46,7 +46,7 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('particl-binaries/' + args.version, exist_ok=True)
+    os.makedirs('vpub-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
@@ -61,21 +61,21 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '--allow-sudo', '-j', args.jobs, '-m', args.memory, '--commit', 'vpub-core='+args.commit, '--url', 'vpub-core='+args.url, '../vpub-core/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../vpub-core/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/particl-*.tar.gz build/out/src/particl-*.tar.gz ../particl-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/vpub-*.tar.gz build/out/src/vpub-*.tar.gz ../vpub-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vpub-core='+args.commit, '--url', 'vpub-core='+args.url, '../vpub-core/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../vpub-core/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/particl-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/particl-*.zip build/out/particl-*.exe ../particl-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/vpub-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/vpub-*.zip build/out/vpub-*.exe ../vpub-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vpub-core='+args.commit, '--url', 'vpub-core='+args.url, '../vpub-core/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../vpub-core/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/particl-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/particl-*.tar.gz build/out/particl-*.dmg ../particl-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/vpub-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/vpub-*.tar.gz build/out/vpub-*.dmg ../vpub-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -94,18 +94,18 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call('cp inputs/particl-' + args.version + '-win-unsigned.tar.gz inputs/particl-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/vpub-' + args.version + '-win-unsigned.tar.gz inputs/vpub-win-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vpub-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../vpub-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/particl-*win64-setup.exe ../particl-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/particl-*win32-setup.exe ../particl-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/vpub-*win64-setup.exe ../vpub-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/vpub-*win32-setup.exe ../vpub-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call('cp inputs/particl-' + args.version + '-osx-unsigned.tar.gz inputs/particl-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/vpub-' + args.version + '-osx-unsigned.tar.gz inputs/vpub-osx-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vpub-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../vpub-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/particl-osx-signed.dmg ../particl-binaries/'+args.version+'/particl-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call('mv build/out/vpub-osx-signed.dmg ../vpub-binaries/'+args.version+'/vpub-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
