@@ -48,7 +48,7 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("particl:");
+const QString BITCOIN_IPC_PREFIX("vpub:");
 #ifdef ENABLE_BIP70
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
@@ -224,7 +224,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start particl: click-to-pay handler"));
+                tr("Cannot start vpub: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -284,9 +284,9 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("particl://", Qt::CaseInsensitive))
+    if (s.startsWith("vpub://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'particl://' is not a valid URI. Use 'particl:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'vpub://' is not a valid URI. Use 'vpub:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
     else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // bitcoin: URI

@@ -43,12 +43,12 @@ static bool WalletAppInit(int argc, char* argv[])
         return false;
     }
     if (argc < 2 || HelpRequested(gArgs)) {
-        std::string usage = strprintf("%s particl-wallet version", PACKAGE_NAME) + " " + FormatFullVersion() + "\n\n" +
+        std::string usage = strprintf("%s vpub-wallet version", PACKAGE_NAME) + " " + FormatFullVersion() + "\n\n" +
                                       "wallet-tool is an offline tool for creating and interacting with Vpub Core wallet files.\n" +
                                       "By default wallet-tool will act on wallets in the default mainnet wallet directory in the datadir.\n" +
                                       "To change the target wallet, use the -datadir, -wallet and -testnet/-regtest arguments.\n\n" +
                                       "Usage:\n" +
-                                     "  particl-wallet [options] <command>\n\n" +
+                                     "  vpub-wallet [options] <command>\n\n" +
                                      gArgs.GetHelpMessage();
 
         fprintf(stdout, "%s", usage.c_str());
@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
     }
 
     if (method.empty()) {
-        fprintf(stderr, "No method provided. Run `particl-wallet -help` for valid methods.\n");
+        fprintf(stderr, "No method provided. Run `vpub-wallet -help` for valid methods.\n");
         return EXIT_FAILURE;
     }
 

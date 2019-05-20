@@ -269,7 +269,7 @@ void Shutdown(InitInterfaces& interfaces)
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("particl-shutoff");
+    RenameThread("vpub-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -674,7 +674,7 @@ void SetupServerArgs()
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/vpubchain/vpub-core>";
-    const std::string URL_WEBSITE = "<https://particl.io/>";
+    const std::string URL_WEBSITE = "<https://vpub.io/>";
 
     return CopyrightHolders(_("Copyright (C)")) + "\n" +
            "\n" +
@@ -779,7 +779,7 @@ static void CleanupBlockRevFiles()
 static void ThreadImport(std::vector<fs::path> vImportFiles)
 {
     const CChainParams& chainparams = Params();
-    RenameThread("particl-loadblk");
+    RenameThread("vpub-loadblk");
     ScheduleBatchPriority();
 
     fBusyImporting = true;

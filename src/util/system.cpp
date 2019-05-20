@@ -74,7 +74,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "particl.conf";
+const char * const BITCOIN_CONF_FILENAME = "vpub.conf";
 const char * const BITCOIN_PID_FILENAME = "particld.pid";
 
 bool fParticlMode = true;
@@ -881,7 +881,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "particl";
+    const char* pszModule = "vpub";
 #endif
     if (pex)
         return strprintf(
@@ -903,7 +903,7 @@ fs::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Vpub
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Vpub
     // Mac: ~/Library/Application Support/Vpub
-    // Unix: ~/.particl
+    // Unix: ~/.vpub
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Vpub";
@@ -919,7 +919,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Vpub";
 #else
     // Unix
-    return pathRet / ".particl";
+    return pathRet / ".vpub";
 #endif
 #endif
 }
