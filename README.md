@@ -1,7 +1,7 @@
 Vpub Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/particl/particl-core.svg?branch=master)](https://travis-ci.org/particl/particl-core)
+[![Build Status](https://travis-ci.org/particl/vpub-core.svg?branch=master)](https://travis-ci.org/particl/vpub-core)
 
 https://particl.io
 
@@ -43,7 +43,7 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/particl/particl-core/tags) are created
+completely stable. [Tags](https://github.com/particl/vpub-core/tags) are created
 regularly to indicate new official, stable release versions of Vpub Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
