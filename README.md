@@ -1,9 +1,9 @@
 Vpub Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/particl/vpub-core.svg?branch=master)](https://travis-ci.org/particl/vpub-core)
+[![Build Status](https://travis-ci.org/vpub/vpub-core.svg?branch=master)](https://travis-ci.org/vpub/vpub-core)
 
-https://particl.io
+https://vpub.io
 
 What is Vpub?
 ----------------
@@ -12,7 +12,7 @@ An open source, decentralized privacy platform
 built for global person to person eCommerce.
 
 For more information, as well as an immediately useable, binary version of
-the Vpub Core software, see https://particl.io.
+the Vpub Core software, see https://vpub.io.
 
 
 Getting Started
@@ -29,7 +29,7 @@ Loading the new mnemonic with the extkeyimportmaster command will setup the
 master HD key and first account.
 
 To create an initial new HD master key and account from random data, start
-particld or particl-qt with the parameter: -createdefaultmasterkey.
+particld or vpub-qt with the parameter: -createdefaultmasterkey.
 
 Remember to backup your passphrase and/or wallet.dat file!
 
