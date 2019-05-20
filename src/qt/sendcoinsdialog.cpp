@@ -566,8 +566,8 @@ void SendCoinsDialog::clear()
         ui->entries->takeAt(0)->widget()->deleteLater();
     }
 
-    ui->cbxTypeFrom->setCurrentIndex(ui->cbxTypeFrom->findText("Part"));
-    ui->cbxTypeTo->setCurrentIndex(ui->cbxTypeTo->findText("Part"));
+    ui->cbxTypeFrom->setCurrentIndex(ui->cbxTypeFrom->findText("Vp"));
+    ui->cbxTypeTo->setCurrentIndex(ui->cbxTypeTo->findText("Vp"));
 
     addEntry();
 
