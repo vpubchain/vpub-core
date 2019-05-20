@@ -180,7 +180,7 @@
         <translation>Novčanik je šifrovan</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
         <translation>%1 će se ugasiti da bi dovršio proces enkriptovanja. Imajte u vidu da enkripcija novčanika ne garantuje potpunu zaštitu particla od krađe od strane nekog virusa koji bi zarazio vaš kompjuter.</translation>
     </message>
     <message>
@@ -414,8 +414,8 @@
         <translation>Alatke za tabove</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation>Zatražite plaćanje (generiše QR kodove i particl: URI-e)</translation>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <translation>Zatražite plaćanje (generiše QR kodove i vpub: URI-e)</translation>
     </message>
     <message>
         <source>Error</source>

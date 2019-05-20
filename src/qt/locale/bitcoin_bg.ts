@@ -426,7 +426,7 @@
         <translation>Раздели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
         <translation>Изискване на плащания(генерира QR кодове и биткойн: URIs)</translation>
     </message>
     <message>
@@ -438,7 +438,7 @@
         <translation>Покажи списък с използваните адреси и имена.</translation>
     </message>
     <message>
-        <source>Open a particl: URI or payment request</source>
+        <source>Open a vpub: URI or payment request</source>
         <translation>Отворете биткойн: URI  или заявка за плащане</translation>
     </message>
     <message>
@@ -1090,7 +1090,7 @@
         <translation>Възникна грешка по време назаявката за плащане</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
+        <source>Cannot start vpub: click-to-pay handler</source>
         <translation>Биткойн не можe да се стартира: click-to-pay handler</translation>
     </message>
     <message>

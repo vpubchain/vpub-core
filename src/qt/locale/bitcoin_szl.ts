@@ -188,7 +188,7 @@
         <translation>Portmanyj zaszyfrowany</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
         <translation>%1 zawrzi sie coby dokōńczyć proces szyfrowaniŏ. Pamiyntej, iże szyfrowanie portmanyja ganc niy zabezpieczŏ Twojich particlów przed chabiyniym bez wirusy abo trojany mogōnce zakażać Twōj kōmputer.</translation>
     </message>
     <message>
@@ -430,8 +430,8 @@
         <translation>Lajsta szkart</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation>Żōndej płatu (gyneruje kod QR jak tyż URI particl:)</translation>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <translation>Żōndej płatu (gyneruje kod QR jak tyż URI vpub:)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -442,8 +442,8 @@
         <translation>Pokŏż wykŏz adres i etyket użytych do ôdbiyraniŏ</translation>
     </message>
     <message>
-        <source>Open a particl: URI or payment request</source>
-        <translation>Ôdewrzij URI particl: abo żōndanie płatu</translation>
+        <source>Open a vpub: URI or payment request</source>
+        <translation>Ôdewrzij URI vpub: abo żōndanie płatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -892,11 +892,11 @@
         <translation>Formular</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation>Świyże transakcyje mogōm niy być jeszcze widzialne, a tedyć saldo portmanyja może być niynŏleżne. Te detale bydōm nŏleżne, kej portmanyj zakōńczy synchrōnizacyjõ z necym particl, zgodnie z miyniōnym ôpisym.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
+        <translation>Świyże transakcyje mogōm niy być jeszcze widzialne, a tedyć saldo portmanyja może być niynŏleżne. Te detale bydōm nŏleżne, kej portmanyj zakōńczy synchrōnizacyjõ z necym vpub, zgodnie z miyniōnym ôpisym.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Prōba wydaniŏ particlōw kere niy sōm jeszcze wyświytlōne za transakcyjŏ ôstanie ôdciepniyntŏ bez nec.</translation>
     </message>
     <message>
@@ -1158,7 +1158,7 @@
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>Wyświytlanŏ informacyjŏ może być niyterŏźnŏ. Twōj portmanyj synchrōnizuje sie autōmatycznie z necym particl zarŏz po tym, jak zrychtowane je skuplowanie, ale proces tyn niy ôstoł jeszcze skōńczōny.</translation>
+        <translation>Wyświytlanŏ informacyjŏ może być niyterŏźnŏ. Twōj portmanyj synchrōnizuje sie autōmatycznie z necym vpub zarŏz po tym, jak zrychtowane je skuplowanie, ale proces tyn niy ôstoł jeszcze skōńczōny.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1188,8 +1188,8 @@
         <translation>Bedynōng URI</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation>'particl://' to niyma nŏleżne URI. Użyj 'particl:'.</translation>
+        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
+        <translation>'vpub://' to niyma nŏleżne URI. Użyj 'vpub:'.</translation>
     </message>
     <message>
         <source>Payment request network doesn't match client network.</source>
@@ -1698,8 +1698,8 @@
         <translation>Wiadōmość:</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
-        <translation>Wiadōmość, kerŏ ôstała prziwstōnŏ do URI particl:, kerŏ bydzie przechowowanŏ z transakcyjōm w cylach informacyjnych. Napōmniynie: Ta wiadōmość niy bydzie rozszyrzowanŏ w necu Vpub.</translation>
+        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <translation>Wiadōmość, kerŏ ôstała prziwstōnŏ do URI vpub:, kerŏ bydzie przechowowanŏ z transakcyjōm w cylach informacyjnych. Napōmniynie: Ta wiadōmość niy bydzie rozszyrzowanŏ w necu Vpub.</translation>
     </message>
     </context>
 <context>

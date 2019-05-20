@@ -188,7 +188,7 @@
         <translation>Lompakko salattiin</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
         <translation>%1 sulkeutuu lopettaakseen salausprosessin. Muista, että salattukaan lompakko ei täysin suojaa sitä haittaohjelmien aiheuttamilta varkauksilta.</translation>
     </message>
     <message>
@@ -434,8 +434,8 @@
         <translation>Välilehtipalkki</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation>Pyydä maksuja (Luo QR koodit ja particl: URIt)</translation>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <translation>Pyydä maksuja (Luo QR koodit ja vpub: URIt)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -446,8 +446,8 @@
         <translation>Näytä vastaanottamiseen käytettyjen osoitteiden ja nimien lista</translation>
     </message>
     <message>
-        <source>Open a particl: URI or payment request</source>
-        <translation>Avaa particl: URI tai maksupyyntö</translation>
+        <source>Open a vpub: URI or payment request</source>
+        <translation>Avaa vpub: URI tai maksupyyntö</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -898,11 +898,11 @@
         <translation>Lomake</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation>Viimeiset tapahtumat eivät välttämättä vielä näy, joten lompakkosi saldo voi olla virheellinen. Tieto korjautuu, kunhan lompakkosi synkronointi particl-verkon kanssa on päättynyt. Tiedot näkyvät alla.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
+        <translation>Viimeiset tapahtumat eivät välttämättä vielä näy, joten lompakkosi saldo voi olla virheellinen. Tieto korjautuu, kunhan lompakkosi synkronointi vpub-verkon kanssa on päättynyt. Tiedot näkyvät alla.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Verkko ei tule hyväksymään sellaisten particlien käyttämistä, jotka liittyvät vielä näkymättömissä oleviin siirtoihin.</translation>
     </message>
     <message>
@@ -1169,11 +1169,11 @@
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Yksikkö jona particl-määrät näytetään</translation>
+        <translation>Yksikkö jona vpub-määrät näytetään</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Valitse mitä yksikköä käytetään ensisijaisesti particl-määrien näyttämiseen.</translation>
+        <translation>Valitse mitä yksikköä käytetään ensisijaisesti vpub-määrien näyttämiseen.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1318,7 +1318,7 @@
         <translation>Maksupyyntövirhe</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
+        <source>Cannot start vpub: click-to-pay handler</source>
         <translation>Vpub.a ei voi käynnistää: klikkaa-maksaaksesi -käsittelijän virhe</translation>
     </message>
     <message>
@@ -1326,8 +1326,8 @@
         <translation>URI käsittely</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation>'particl://' ei ole kelvollinen URI. Käytä 'particl:' sen sijaan.</translation>
+        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
+        <translation>'vpub://' ei ole kelvollinen URI. Käytä 'vpub:' sen sijaan.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
@@ -2085,7 +2085,7 @@
         <translation>Piilota</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
         <translation>Vähimmäispalkkion maksaminen käy hyvin, kunhan verkossa on vähemmän siirtotapahtumia kuin lohkoissa on tilaa. Huomaa, että tämä saattaa johtaa ei-koskaan-vahvistuvaan siirtoon, jos verkon käsittelykyky ylittyy.</translation>
     </message>
     <message>
@@ -2316,7 +2316,7 @@
         <translation>Poista tämä alkio</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän particleja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
     </message>
     <message>
@@ -2344,8 +2344,8 @@
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
-        <translation>Viesti joka liitettiin particl: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Vpub.verkkoon.</translation>
+        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <translation>Viesti joka liitettiin vpub: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Vpub.verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2389,7 +2389,7 @@
         <translation>&amp;Allekirjoita viesti</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vpub sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Voit allekirjoittaa viestit / sopimukset omalla osoitteellasi todistaaksesi että voit vastaanottaa siihen lähetetyt particlit. Varo allekirjoittamasta mitään epämääräistä, sillä phishing-hyökkääjät voivat huijata sinua luovuttamaan henkilöllisyytesi allekirjoituksella. Allekirjoita ainoastaan täysin yksityiskohtainen selvitys siitä, mihin olet sitoutumassa.</translation>
     </message>
     <message>

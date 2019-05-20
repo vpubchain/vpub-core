@@ -188,7 +188,7 @@
         <translation>Dompet terenkripsi</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
         <translation>%1 sekarang akan ditutup untuk menyelesaikan proses enkripsi. Ingatlah bahwa mengenkripsi dompet Anda tidak dapat sepenuhnya melindungi komputer Anda dari pencurian malware yang menginfeksi komputer Anda.</translation>
     </message>
     <message>
@@ -434,8 +434,8 @@
         <translation>Baris tab</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation>Permintaan pembayaran (membuat kode QR dan particl: URIs)</translation>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <translation>Permintaan pembayaran (membuat kode QR dan vpub: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -446,8 +446,8 @@
         <translation>Tampilkan daftar alamat dan label yang diterima</translation>
     </message>
     <message>
-        <source>Open a particl: URI or payment request</source>
-        <translation>Buka URI particl: atau permintaan pembayaran</translation>
+        <source>Open a vpub: URI or payment request</source>
+        <translation>Buka URI vpub: atau permintaan pembayaran</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -900,12 +900,12 @@
         <translation>Formulir</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
         <translation>Transaksi-transaksi terkini mungkin belum terlihat dan oleh karenanya, saldo dompet Anda mungkin tidak tepat. Informasi ini akan akurat ketika dompet Anda tersinkronisasi dengan jaringan Vpub. seperti rincian berikut.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Usaha untuk menggunakan particl yang dipengaruhi oleh transaksi yang belum terlihat tidak akan diterima oleh jaringan.</translation>
+        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Usaha untuk menggunakan vpub yang dipengaruhi oleh transaksi yang belum terlihat tidak akan diterima oleh jaringan.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1139,7 +1139,7 @@
     </message>
     <message>
         <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Koneksi ke jaringan particl melalui proxy SOCKS5 yang berbeda untuk layanan Tor tersembunyi.</translation>
+        <translation>Koneksi ke jaringan vpub melalui proxy SOCKS5 yang berbeda untuk layanan Tor tersembunyi.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1320,16 +1320,16 @@
         <translation>Terjadi kesalahan pada permintaan pembayaran</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation>Tidak bisa memulai particl: handler click-to-pay</translation>
+        <source>Cannot start vpub: click-to-pay handler</source>
+        <translation>Tidak bisa memulai vpub: handler click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Pengelolaan URI</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation>'particl://' bukanlah alamat URI yang valid. Silakan gunakan 'particl:'.</translation>
+        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
+        <translation>'vpub://' bukanlah alamat URI yang valid. Silakan gunakan 'vpub:'.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>

@@ -188,7 +188,7 @@
         <translation>Portofel criptat</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
         <translation>%1 se va închide acum pentru a termina procesul de criptare. Ţineţi minte că criptarea portofelului nu vă poate proteja în totalitate de furtul monedelor de către programe malware care vă infectează calculatorul.</translation>
     </message>
     <message>
@@ -434,8 +434,8 @@
         <translation>Bara de unelte</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation>Cereţi plăţi (generează coduri QR şi particl-uri: URls)</translation>
+        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <translation>Cereţi plăţi (generează coduri QR şi vpub-uri: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -446,8 +446,8 @@
         <translation>Arată lista de adrese pentru primire şi etichetele</translation>
     </message>
     <message>
-        <source>Open a particl: URI or payment request</source>
-        <translation>Deschidere particl: o adresa URI sau o cerere de plată</translation>
+        <source>Open a vpub: URI or payment request</source>
+        <translation>Deschidere vpub: o adresa URI sau o cerere de plată</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -900,11 +900,11 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
         <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua Vpub. asa cum este detaliat mai jos.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Incercarea de a cheltui particli care sunt afectati de tranzactii ce inca nu sunt afisate nu va fi acceptata de retea.</translation>
     </message>
     <message>
@@ -1179,7 +1179,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de particl.</translation>
+        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de vpub.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1239,7 +1239,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa particl pe care aţi specificat-o nu este validă.</translation>
+        <translation>Adresa vpub pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -1324,7 +1324,7 @@
         <translation>Eroare la cererea de plată</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
+        <source>Cannot start vpub: click-to-pay handler</source>
         <translation>Vpub nu poate porni: click-to-pay handler</translation>
     </message>
     <message>
@@ -1332,8 +1332,8 @@
         <translation>Gestionare URI</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation>'particl://' nu este un URI valid. Folositi 'particl:' in loc.</translation>
+        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
+        <translation>'vpub://' nu este un URI valid. Folositi 'vpub:' in loc.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
@@ -2147,7 +2147,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
         <translation>Ascunde</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
         <translation>Plata unei taxe minime de tranzactie este in regula atata timp cat exista mai mult spatiu in blocuri dacat sunt tranzactii. Insa trebuie sa fiti constienti ca acest lucru poate conduce la tranzactii care nu vor fi niciodata confirmate in cazul in care exista cerere de tranzactii mai mare decat poate procesa reteaua.</translation>
     </message>
     <message>
@@ -2328,7 +2328,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
     </message>
     <message>
         <source>Warning: Invalid Vpub address</source>
-        <translation>Atenţie: Adresa particl nevalidă!</translation>
+        <translation>Atenţie: Adresa vpub nevalidă!</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2371,7 +2371,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
     </message>
     <message>
         <source>The Vpub address to send the payment to</source>
-        <translation>Adresa particl către care se face plata</translation>
+        <translation>Adresa vpub către care se face plata</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2390,8 +2390,8 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
         <translation>Înlătură această intrare</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Taxa va fi scazuta in suma trimisa. Destinatarul va primi mai putini particl decat ati specificat in campul sumei trimise. Daca au fost selectati mai multi destinatari, taxa se va imparti in mod egal.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Taxa va fi scazuta in suma trimisa. Destinatarul va primi mai putini vpub decat ati specificat in campul sumei trimise. Daca au fost selectati mai multi destinatari, taxa se va imparti in mod egal.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2418,8 +2418,8 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
         <translation>Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
-        <translation>un mesaj a fost ataşat la particl: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua particl.</translation>
+        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <translation>un mesaj a fost ataşat la vpub: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua vpub.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2463,7 +2463,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
         <translation>&amp;Semnează mesaj</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vpub sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Puteţi semna mesaje/contracte cu adresele dvs. pentru a demostra ca puteti primi particli trimisi la ele. Aveţi grijă să nu semnaţi nimic vag sau aleator, deoarece atacurile de tip phishing vă pot păcăli să le transferaţi identitatea. Semnaţi numai declaraţiile detaliate cu care sînteti de acord.</translation>
     </message>
     <message>
