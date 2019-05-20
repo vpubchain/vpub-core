@@ -43,8 +43,8 @@ QString BitcoinUnits::longName(int unit)
     switch(unit)
     {
     case BTC: return QString("VP");
-    case mBTC: return QString("mPART");
-    case uBTC: return QString::fromUtf8("μPART (parts)");
+    case mBTC: return QString("mVP");
+    case uBTC: return QString::fromUtf8("μVP (vps)");
     case SAT: return QString("Satoshi (sat)");
     default: return QString("???");
     }
@@ -54,7 +54,7 @@ QString BitcoinUnits::shortName(int unit)
 {
     switch(unit)
     {
-    case uBTC: return QString::fromUtf8("parts");
+    case uBTC: return QString::fromUtf8("vps");
     case SAT: return QString("sat");
     default:   return longName(unit);
     }
@@ -66,7 +66,7 @@ QString BitcoinUnits::description(int unit)
     {
     case BTC: return QString("Particls");
     case mBTC: return QString("Milli-Particls (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Particls (parts) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Particls (vps) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
