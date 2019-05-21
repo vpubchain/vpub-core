@@ -7,7 +7,7 @@ import time
 import json
 import binascii
 
-from test_framework.test_particl import (
+from test_framework.test_vpub import (
     ParticlTestFramework,
     isclose,
     getIndexAtProperty,

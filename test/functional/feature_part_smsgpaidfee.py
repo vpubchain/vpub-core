@@ -5,7 +5,7 @@
 
 import struct
 
-from test_framework.test_particl import ParticlTestFramework
+from test_framework.test_vpub import ParticlTestFramework
 from test_framework.util import connect_nodes
 
 

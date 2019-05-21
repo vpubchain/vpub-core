@@ -371,11 +371,11 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Loo maksepäring (genereerib QR koodid ja particli: URId)</translation>
+        <translation>Loo maksepäring (genereerib QR koodid ja vpubi: URId)</translation>
     </message>
     <message>
         <source>Open a vpub: URI or payment request</source>
-        <translation>Ava particli: URI või maksepäring</translation>
+        <translation>Ava vpubi: URI või maksepäring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

@@ -2321,7 +2321,7 @@
     </message>
     <message>
         <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
-        <translation>En melding som var tilknyttet particlen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Vpub.nettverket.</translation>
+        <translation>En melding som var tilknyttet vpuben: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Vpub.nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>

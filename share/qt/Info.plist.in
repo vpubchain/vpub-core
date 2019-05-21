@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.particlfoundation.Vpub-Qt</string>
+  <string>io.vpubfoundation.Vpub-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -71,7 +71,7 @@
         <string>application/x-vpub-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>particlpaymentrequest</string>
+          <string>vpubpaymentrequest</string>
         </array>
       </dict>
     </dict>

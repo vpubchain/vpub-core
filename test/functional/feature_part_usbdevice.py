@@ -7,7 +7,7 @@ import os
 import json
 import configparser
 
-from test_framework.test_particl import (
+from test_framework.test_vpub import (
     ParticlTestFramework,
     isclose,
     getIndexAtProperty,

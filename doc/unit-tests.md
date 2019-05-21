@@ -6,7 +6,7 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the vpubd tests manually, launch `src/test/test_particl`.
+To run the vpubd tests manually, launch `src/test/test_vpub`.
 
 To add more vpubd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that

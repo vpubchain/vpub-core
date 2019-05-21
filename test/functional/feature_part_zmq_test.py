@@ -9,7 +9,7 @@ import struct
 import time
 import base64
 
-from test_framework.test_particl import ParticlTestFramework
+from test_framework.test_vpub import ParticlTestFramework
 from test_framework.test_framework import SkipTest
 from test_framework.util import bytes_to_hex_str
 

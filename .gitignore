@@ -6,9 +6,9 @@ src/vpubd
 src/vpub-cli
 src/vpub-tx
 src/vpub-wallet
-src/test/test_particl
-src/test/test_particl_fuzzy
-src/qt/test/test_particl-qt
+src/test/test_vpub
+src/test/test_vpub_fuzzy
+src/qt/test/test_vpub-qt
 
 # autoreconf
 src/Makefile.in
@@ -107,7 +107,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_particl.coverage/
+test_vpub.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -122,7 +122,7 @@ test/cache/*
 
 /doc/doxygen/
 
-libparticlconsensus.pc
+libvpubconsensus.pc
 contrib/devtools/split-debug.sh
 
 # Output from running db4 installation

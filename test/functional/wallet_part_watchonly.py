@@ -3,8 +3,8 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_particl import ParticlTestFramework
-from test_framework.test_particl import isclose
+from test_framework.test_vpub import ParticlTestFramework
+from test_framework.test_vpub import isclose
 
 
 class WalletParticlWatchOnlyTest(ParticlTestFramework):

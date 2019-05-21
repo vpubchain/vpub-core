@@ -11,7 +11,7 @@ import binascii
 from random import random
 from decimal import Decimal
 
-from test_framework.test_particl import (
+from test_framework.test_vpub import (
     ParticlTestFramework,
     isclose,
     getIndexAtProperty,

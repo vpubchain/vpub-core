@@ -5,7 +5,7 @@
 
 import json
 
-from test_framework.test_particl import ParticlTestFramework, isclose
+from test_framework.test_vpub import ParticlTestFramework, isclose
 from test_framework.util import connect_nodes_bi
 
 
