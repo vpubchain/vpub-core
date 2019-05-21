@@ -5,7 +5,7 @@
 
 import struct
 
-from test_framework.test_vpub import ParticlTestFramework
+from test_framework.test_vpub import VpubTestFramework
 from test_framework.util import connect_nodes
 
 
@@ -32,7 +32,7 @@ def putvarint(i):
     return bb
 
 
-class SmsgPaidFeeTest(ParticlTestFramework):
+class SmsgPaidFeeTest(VpubTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

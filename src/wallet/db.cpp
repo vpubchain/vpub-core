@@ -385,7 +385,7 @@ bool BerkeleyBatch::Recover(const fs::path& file_path, void *callbackDataIn, boo
             if (!(*recoverKVcallback)(callbackDataIn, ssKey, ssValue))
                 continue;
 
-            if (fParticlMode)
+            if (fVpubMode)
             {
                 Dbt datKey(&row.first[0], row.first.size());
                 Dbt datValue(ssValue.data(), ssValue.size());

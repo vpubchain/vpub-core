@@ -1394,7 +1394,7 @@ bool CHDWallet::AddressBookChangedNotify(const CTxDestination &address, ChangeTy
 
 DBErrors CHDWallet::LoadWallet(bool& fFirstRunRet)
 {
-    fParticlWallet = true;
+    fVpubWallet = true;
 
     if (!ParseMoney(gArgs.GetArg("-reservebalance", ""), nReserveBalance)) {
         InitError(_("Invalid amount for -reservebalance=<amount>"));
@@ -2021,7 +2021,7 @@ CAmount CHDWallet::GetDebit(const CTxIn &txin, const isminefilter &filter) const
 
 CAmount CHDWallet::GetDebit(const CTransaction& tx, const isminefilter& filter) const
 {
-    if (!tx.IsParticlVersion())
+    if (!tx.IsVpubVersion())
         return CWallet::GetDebit(tx, filter);
 
     CAmount nDebit = 0;
@@ -8377,7 +8377,7 @@ bool CHDWallet::CreateTransaction(interfaces::Chain::Lock& locked_chain, const s
 {
     WalletLogPrintf("CHDWallet %s\n", __func__);
 
-    if (!fParticlWallet) {
+    if (!fVpubWallet) {
         return CWallet::CreateTransaction(locked_chain, vecSend, tx, reservekey, nFeeRet, nChangePosInOut, strFailReason, coin_control, sign);
     }
 
@@ -12812,12 +12812,12 @@ void RestartStakingThreads()
     StartThreadStakeMiner();
 };
 
-bool IsParticlWallet(const CKeyStore *win)
+bool IsVpubWallet(const CKeyStore *win)
 {
     return win && dynamic_cast<const CHDWallet*>(win);
 };
 
-CHDWallet *GetParticlWallet(CKeyStore *win)
+CHDWallet *GetVpubWallet(CKeyStore *win)
 {
     CHDWallet *rv;
     if (!win)
@@ -12827,7 +12827,7 @@ CHDWallet *GetParticlWallet(CKeyStore *win)
     return rv;
 };
 
-const CHDWallet *GetParticlWallet(const CKeyStore *win)
+const CHDWallet *GetVpubWallet(const CKeyStore *win)
 {
     const CHDWallet *rv;
     if (!win)

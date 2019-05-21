@@ -19,7 +19,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_FIXTURE_TEST_SUITE(vpubchain_tests, ParticlBasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(vpubchain_tests, VpubBasicTestingSetup)
 
 
 BOOST_AUTO_TEST_CASE(oldversion_test)
@@ -312,7 +312,7 @@ BOOST_AUTO_TEST_CASE(mixed_input_types)
 {
     CMutableTransaction txn;
     txn.nVersion = VPUB_TXN_VERSION;
-    BOOST_CHECK(txn.IsParticlVersion());
+    BOOST_CHECK(txn.IsVpubVersion());
 
     CAmount txfee;
     int nSpendHeight = 1;
@@ -321,7 +321,7 @@ BOOST_AUTO_TEST_CASE(mixed_input_types)
 
     CMutableTransaction txnPrev;
     txnPrev.nVersion = VPUB_TXN_VERSION;
-    BOOST_CHECK(txnPrev.IsParticlVersion());
+    BOOST_CHECK(txnPrev.IsVpubVersion());
 
     CScript scriptPubKey;
     txnPrev.vpout.push_back(MAKE_OUTPUT<CTxOutStandard>(1 * COIN, scriptPubKey));

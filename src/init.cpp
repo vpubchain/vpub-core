@@ -545,7 +545,7 @@ void SetupServerArgs()
 
     g_wallet_init_interface.AddWalletOptions();
 #ifdef ENABLE_WALLET
-    if (fParticlMode) {
+    if (fVpubMode) {
         CHDWallet::AddOptions();
     }
 #endif
@@ -1073,11 +1073,11 @@ bool AppInitBasicSetup()
 
 bool AppInitParameterInteraction()
 {
-    fParticlMode = !gArgs.GetBoolArg("-btcmode", false); // qa tests
-    if (!fParticlMode) {
+    fVpubMode = !gArgs.GetBoolArg("-btcmode", false); // qa tests
+    if (!fVpubMode) {
         WITNESS_SCALE_FACTOR = WITNESS_SCALE_FACTOR_BTC;
         if (gArgs.GetBoolArg("-regtest", false)) {
-            ResetParams(CBaseChainParams::REGTEST, fParticlMode);
+            ResetParams(CBaseChainParams::REGTEST, fVpubMode);
         }
     }
 
@@ -1217,7 +1217,7 @@ bool AppInitParameterInteraction()
     }
 
     // TODO: Check pruning
-    if (fPruneMode && fParticlMode)
+    if (fPruneMode && fVpubMode)
     {
         LogPrintf("Block pruning disabled.  Todo.\n");
         fPruneMode = false;
@@ -1928,7 +1928,7 @@ bool AppInitMain(InitInterfaces& interfaces)
 
     // ********************************************************* Step 10.1: start secure messaging
 
-    if (fParticlMode) { // SMSG breaks functional tests with services flag, see version msg
+    if (fVpubMode) { // SMSG breaks functional tests with services flag, see version msg
 #ifdef ENABLE_WALLET
         auto vpwallets = GetWallets();
         smsgModule.Start(vpwallets.size() > 0 ? vpwallets[0] : nullptr, !gArgs.GetBoolArg("-smsg", true), gArgs.GetBoolArg("-smsgscanchain", false));
@@ -2024,7 +2024,7 @@ bool AppInitMain(InitInterfaces& interfaces)
 
     // ********************************************************* Step 12.5: start staking
     #ifdef ENABLE_WALLET
-    if (fParticlWallet) {
+    if (fVpubWallet) {
         StartThreadStakeMiner();
     }
     #endif

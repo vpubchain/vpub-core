@@ -499,7 +499,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
-        <translation>Seznam argumentů Particlu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <translation>Seznam argumentů Vpubu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>%1 client</source>

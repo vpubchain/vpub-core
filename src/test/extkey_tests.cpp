@@ -12,7 +12,7 @@
 #include <string>
 #include <boost/test/unit_test.hpp>
 
-BOOST_FIXTURE_TEST_SUITE(extkey_tests, ParticlBasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(extkey_tests, VpubBasicTestingSetup)
 
 class FailTest
 {

@@ -7,11 +7,11 @@
 # Test addressindex generation and fetching
 #
 
-from test_framework.test_vpub import ParticlTestFramework
+from test_framework.test_vpub import VpubTestFramework
 from test_framework.util import connect_nodes, assert_equal
 
 
-class SpentIndexTest(ParticlTestFramework):
+class SpentIndexTest(VpubTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 4

@@ -96,8 +96,8 @@ void EnsureWalletIsUnlocked(CWallet * const pwallet)
     if (pwallet->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-    if (IsParticlWallet(pwallet)
-        && GetParticlWallet(pwallet)->fUnlockForStakingOnly)
+    if (IsVpubWallet(pwallet)
+        && GetVpubWallet(pwallet)->fUnlockForStakingOnly)
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Wallet is unlocked for staking only.");
 }
 
@@ -238,7 +238,7 @@ static UniValue getnewaddress(const JSONRPCRequest& request)
                 },
             }.ToString());
 
-    if (!IsParticlWallet(pwallet)) {
+    if (!IsVpubWallet(pwallet)) {
         LOCK(pwallet->cs_wallet);
         if (!pwallet->CanGetAddresses()) {
             throw JSONRPCError(RPC_WALLET_ERROR, "Error: This wallet has no available keys");
@@ -250,7 +250,7 @@ static UniValue getnewaddress(const JSONRPCRequest& request)
     if (!request.params[0].isNull())
         label = LabelFromValue(request.params[0]);
 
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         CKeyID keyID;
 
         bool fBech32 = request.params.size() > 1 ? GetBool(request.params[1]) : false;
@@ -258,7 +258,7 @@ static UniValue getnewaddress(const JSONRPCRequest& request)
         bool f256bit = request.params.size() > 3 ? GetBool(request.params[3]) : false;
 
         CPubKey newKey;
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         {
             //LOCK2(cs_main, pwallet->cs_wallet);
             LOCK(cs_main);
@@ -342,8 +342,8 @@ static UniValue getrawchangeaddress(const JSONRPCRequest& request)
 
     LOCK(pwallet->cs_wallet);
 
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         CPubKey pkOut;
 
         if (0 != phdw->NewKeyFromAccount(pkOut, true)) {
@@ -553,7 +553,7 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
         }
     }
 
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         JSONRPCRequest newRequest;
         newRequest.fHelp = false;
         newRequest.fSkipBlock = true; // already blocked in this function
@@ -814,10 +814,10 @@ static UniValue getreceivedbyaddress(const JSONRPCRequest& request)
     for (const std::pair<const uint256, CWalletTx>& pairWtx : pwallet->mapWallet) {
         const CWalletTx& wtx = pairWtx.second;
 
-        if ((!fParticlWallet && wtx.IsCoinBase()) || !CheckFinalTx(*wtx.tx))
+        if ((!fVpubWallet && wtx.IsCoinBase()) || !CheckFinalTx(*wtx.tx))
             continue;
 
-        if (fParticlWallet) {
+        if (fVpubWallet) {
             for (auto &txout : wtx.tx->vpout) {
                 if (txout->IsStandardOutput()
                     && *txout->GetPScriptPubKey() == scriptPubKey) {
@@ -890,10 +890,10 @@ static UniValue getreceivedbylabel(const JSONRPCRequest& request)
     CAmount nAmount = 0;
     for (const std::pair<const uint256, CWalletTx>& pairWtx : pwallet->mapWallet) {
         const CWalletTx& wtx = pairWtx.second;
-        if ((!fParticlWallet && wtx.IsCoinBase()) || !CheckFinalTx(*wtx.tx))
+        if ((!fVpubWallet && wtx.IsCoinBase()) || !CheckFinalTx(*wtx.tx))
             continue;
 
-        if (fParticlWallet) {
+        if (fVpubWallet) {
             for (auto &txout : wtx.tx->vpout) {
                 CTxDestination address;
                 if (txout->IsStandardOutput()
@@ -1099,7 +1099,7 @@ static UniValue sendmany(const JSONRPCRequest& request)
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid estimate_mode parameter");
         }
     }
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         JSONRPCRequest newRequest;
         newRequest.fHelp = false;
         newRequest.fSkipBlock = true; // already blocked in this function
@@ -1293,7 +1293,7 @@ static UniValue addmultisigaddress(const JSONRPCRequest& request)
     }
 
     OutputType output_type = pwallet->m_default_address_type;
-    if (!fParticlMode)
+    if (!fVpubMode)
     if (!request.params[3].isNull()) {
         if (!ParseOutputType(request.params[3].get_str(), output_type)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, strprintf("Unknown address type '%s'", request.params[3].get_str()));
@@ -1305,8 +1305,8 @@ static UniValue addmultisigaddress(const JSONRPCRequest& request)
     CTxDestination dest = AddAndGetDestinationForScript(*pwallet, inner, output_type);
 
     UniValue result(UniValue::VOBJ);
-    bool fbech32 = fParticlMode && request.params.size() > 3 ? request.params[3].get_bool() : false;
-    bool f256Hash = fParticlMode && request.params.size() > 4 ? request.params[4].get_bool() : false;
+    bool fbech32 = fVpubMode && request.params.size() > 3 ? request.params[3].get_bool() : false;
+    bool f256Hash = fVpubMode && request.params.size() > 4 ? request.params[4].get_bool() : false;
 
     if (f256Hash) {
         CScriptID256 innerID;
@@ -1678,11 +1678,11 @@ static void ListTransactions(interfaces::Chain::Lock& locked_chain, CWallet* con
                 entry.pushKV("involvesWatchonly", true);
             }
 
-            if (fParticlWallet
+            if (fVpubWallet
                 && r.destination.type() == typeid(CKeyID)) {
                 CStealthAddress sx;
                 CKeyID idK = boost::get<CKeyID>(r.destination);
-                if (GetParticlWallet(pwallet)->GetStealthLinked(idK, sx)) {
+                if (GetVpubWallet(pwallet)->GetStealthLinked(idK, sx)) {
                     entry.pushKV("stealth_address", sx.Encoded());
                 }
             }
@@ -1698,7 +1698,7 @@ static void ListTransactions(interfaces::Chain::Lock& locked_chain, CWallet* con
                 if (wtx.IsImmatureCoinBase(locked_chain)) {
                     entry.pushKV("category", "immature");
                 } else {
-                    entry.pushKV("category", (fParticlMode ? "coinbase" : "generate"));
+                    entry.pushKV("category", (fVpubMode ? "coinbase" : "generate"));
                 }
             } else {
                 entry.pushKV("category", "receive");
@@ -1993,11 +1993,11 @@ UniValue listtransactions(const JSONRPCRequest& request)
     // ret must be newest to oldest
     ret.reverse();
 
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         auto locked_chain = pwallet->chain().lock();
         LOCK(pwallet->cs_wallet);
 
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         const RtxOrdered_t &txOrdered = phdw->rtxOrdered;
 
         // TODO: Combine finding and inserting into ret loops
@@ -2156,8 +2156,8 @@ static UniValue listsinceblock(const JSONRPCRequest& request)
         }
     }
 
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *phdw = GetVpubWallet(pwallet);
 
         for (const auto &ri : phdw->mapRecords) {
             const uint256 &txhash = ri.first;
@@ -2184,8 +2184,8 @@ static UniValue listsinceblock(const JSONRPCRequest& request)
                 // even negative confirmation ones, hence the big negative.
                 ListTransactions(*locked_chain, pwallet, it->second, -100000000, true, removed, filter, nullptr /* filter_label */);
             } else
-            if (IsParticlWallet(pwallet)) {
-                CHDWallet *phdw = GetParticlWallet(pwallet);
+            if (IsVpubWallet(pwallet)) {
+                CHDWallet *phdw = GetVpubWallet(pwallet);
                 const uint256 &txhash = tx->GetHash();
                 MapRecords_t::const_iterator mri = phdw->mapRecords.find(txhash);
                 if (mri != phdw->mapRecords.end()) {
@@ -2287,8 +2287,8 @@ UniValue gettransaction(const JSONRPCRequest& request)
     UniValue entry(UniValue::VOBJ);
     auto it = pwallet->mapWallet.find(hash);
     if (it == pwallet->mapWallet.end()) {
-        if (IsParticlWallet(pwallet)) {
-            CHDWallet *phdw = GetParticlWallet(pwallet);
+        if (IsVpubWallet(pwallet)) {
+            CHDWallet *phdw = GetVpubWallet(pwallet);
             MapRecords_t::const_iterator mri = phdw->mapRecords.find(hash);
 
             if (mri != phdw->mapRecords.end()) {
@@ -2372,7 +2372,7 @@ static UniValue abandontransaction(const JSONRPCRequest& request)
     uint256 hash(ParseHashV(request.params[0], "txid"));
 
     if (!pwallet->mapWallet.count(hash)) {
-        if (!IsParticlWallet(pwallet) || !GetParticlWallet(pwallet)->HaveTransaction(hash)) {
+        if (!IsVpubWallet(pwallet) || !GetVpubWallet(pwallet)->HaveTransaction(hash)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid or non-wallet transaction id");
         }
     }
@@ -2550,8 +2550,8 @@ static UniValue walletpassphrase(const JSONRPCRequest& request)
         fWalletUnlockStakingOnly = request.params[2].get_bool();
     }
 
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         LOCK(phdw->cs_wallet);
         phdw->fUnlockForStakingOnly = fWalletUnlockStakingOnly;
     }
@@ -2831,10 +2831,10 @@ static UniValue lockunspent(const JSONRPCRequest& request)
 
         const COutPoint outpt(txid, nOutput);
 
-        if (IsParticlWallet(pwallet))  {
+        if (IsVpubWallet(pwallet))  {
             const auto it = pwallet->mapWallet.find(outpt.hash);
             if (it == pwallet->mapWallet.end()) {
-                CHDWallet *phdw = GetParticlWallet(pwallet);
+                CHDWallet *phdw = GetVpubWallet(pwallet);
                 const auto it = phdw->mapRecords.find(outpt.hash);
                 if (it == phdw->mapRecords.end()) {
                     throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, unknown transaction");
@@ -3048,7 +3048,7 @@ static UniValue getwalletinfo(const JSONRPCRequest& request)
     obj.pushKV("walletname", pwallet->GetName());
     obj.pushKV("walletversion", pwallet->GetVersion());
 
-    if (fParticlWallet) {
+    if (fVpubWallet) {
         CHDWalletBalances bal;
         ((CHDWallet*)pwallet)->GetBalances(bal);
 
@@ -3081,12 +3081,12 @@ static UniValue getwalletinfo(const JSONRPCRequest& request)
         obj.pushKV("immature_balance",    ValueFromAmount(pwallet->GetImmatureBalance()));
     }
 
-    int nTxCount = (int)pwallet->mapWallet.size() + (fParticlWallet ? (int)((CHDWallet*)pwallet)->mapRecords.size() : 0);
+    int nTxCount = (int)pwallet->mapWallet.size() + (fVpubWallet ? (int)((CHDWallet*)pwallet)->mapRecords.size() : 0);
     obj.pushKV("txcount",       (int)nTxCount);
 
     CKeyID seed_id;
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *pwhd = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *pwhd = GetVpubWallet(pwallet);
 
         obj.pushKV("keypoololdest", pwhd->GetOldestActiveAccountTime());
         obj.pushKV("keypoolsize",   pwhd->CountActiveAccountKeys());
@@ -3287,7 +3287,7 @@ static UniValue createwallet(const JSONRPCRequest& request)
     if (!wallet) {
         throw JSONRPCError(RPC_WALLET_ERROR, "Wallet creation failed.");
     }
-    if (fParticlMode && !((CHDWallet*)wallet.get())->Initialise()) {
+    if (fVpubMode && !((CHDWallet*)wallet.get())->Initialise()) {
         throw JSONRPCError(RPC_WALLET_ERROR, "Wallet initialise failed.");
     }
     AddWallet(wallet);
@@ -3342,7 +3342,7 @@ static UniValue unloadwallet(const JSONRPCRequest& request)
 
     UnloadWallet(std::move(wallet));
 
-    if (fParticlMode) {
+    if (fVpubMode) {
         RestartStakingThreads();
     }
 
@@ -3385,8 +3385,8 @@ static UniValue resendwallettransactions(const JSONRPCRequest& request)
 
     std::vector<uint256> txids = pwallet->ResendWalletTransactionsBefore(*locked_chain, GetTime(), g_connman.get());
     UniValue result(UniValue::VARR);
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         std::vector<uint256> txidsRec;
         txidsRec = phdw->ResendRecordTransactionsBefore(*locked_chain, GetTime(), g_connman.get());
 
@@ -3563,7 +3563,7 @@ static UniValue listunspent(const JSONRPCRequest& request)
         CTxDestination address;
         const CScript *scriptPubKey;
         bool fValidAddress;
-        if (fParticlWallet)
+        if (fVpubWallet)
         {
             scriptPubKey = out.tx->tx->vpout[out.i]->GetPScriptPubKey();
             nValue = out.tx->tx->vpout[out.i]->GetValue();
@@ -3658,9 +3658,9 @@ static UniValue listunspent(const JSONRPCRequest& request)
         }
         entry.pushKV("safe", out.fSafe);
 
-        if (IsParticlWallet(pwallet))
+        if (IsVpubWallet(pwallet))
         {
-            CHDWallet *phdw = GetParticlWallet(pwallet);
+            CHDWallet *phdw = GetVpubWallet(pwallet);
             CKeyID stakingKeyID;
             bool fStakeable = ExtractStakingKeyID(*scriptPubKey, stakingKeyID);
             if (fStakeable)
@@ -3777,7 +3777,7 @@ void FundTransaction(CWallet* const pwallet, CMutableTransaction& tx, CAmount& f
       }
     }
 
-    size_t nOutputs = IsParticlWallet(pwallet) ? tx.vpout.size() : tx.vout.size();
+    size_t nOutputs = IsVpubWallet(pwallet) ? tx.vpout.size() : tx.vout.size();
     if (nOutputs == 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "TX must have at least one output");
 
@@ -4521,8 +4521,8 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
     ret.pushKV("scriptPubKey", HexStr(scriptPubKey.begin(), scriptPubKey.end()));
 
     isminetype mine = ISMINE_NO;
-    if (IsParticlWallet(pwallet)) {
-        CHDWallet *phdw = GetParticlWallet(pwallet);
+    if (IsVpubWallet(pwallet)) {
+        CHDWallet *phdw = GetVpubWallet(pwallet);
         if (dest.type() == typeid(CExtKeyPair)) {
             CExtKeyPair ek = boost::get<CExtKeyPair>(dest);
             CKeyID id = ek.GetID();
@@ -4801,7 +4801,7 @@ UniValue sethdseed(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_WALLET_ERROR, "Cannot set a HD seed on a non-HD wallet. Start with -upgradewallet in order to upgrade a non-HD wallet to HD");
     }
 
-    if (IsParticlWallet(pwallet))
+    if (IsVpubWallet(pwallet))
         throw JSONRPCError(RPC_WALLET_ERROR, "Not necessary in Vpub mode.");
 
     EnsureWalletIsUnlocked(pwallet);

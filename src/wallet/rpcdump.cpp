@@ -614,10 +614,10 @@ UniValue importwallet(const JSONRPCRequest& request)
                     UniValue inj;
                     inj.read(sJson);
 
-                    if (!IsParticlWallet(pwallet)) {
+                    if (!IsVpubWallet(pwallet)) {
                         throw JSONRPCError(RPC_INVALID_PARAMETER, "Legacy wallet");
                     }
-                    if (!GetParticlWallet(pwallet)->LoadJson(inj, sError)) {
+                    if (!GetVpubWallet(pwallet)->LoadJson(inj, sError)) {
                         throw JSONRPCError(RPC_WALLET_ERROR, "LoadJson failed " + sError);
                     }
                 }
@@ -762,9 +762,9 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Vpub address");
     }
 
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         if (dest.type() == typeid(CExtKeyPair)) {
-            CHDWallet *phdw = GetParticlWallet(pwallet);
+            CHDWallet *phdw = GetVpubWallet(pwallet);
             CExtKeyPair ek = boost::get<CExtKeyPair>(dest);
             CKeyID id = ek.GetID();
             CStoredExtKey sek;
@@ -908,12 +908,12 @@ UniValue dumpwallet(const JSONRPCRequest& request)
         }
     }
 
-    if (IsParticlWallet(pwallet)) {
+    if (IsVpubWallet(pwallet)) {
         std::string sError;
         file << "\n# --- Begin JSON --- \n";
 
         UniValue rv(UniValue::VOBJ);
-        if (!GetParticlWallet(pwallet)->DumpJson(rv, sError)) {
+        if (!GetVpubWallet(pwallet)->DumpJson(rv, sError)) {
             throw JSONRPCError(RPC_WALLET_ERROR, "DumpJson failed " + sError);
         }
         file << rv.write(1);

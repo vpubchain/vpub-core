@@ -3,11 +3,11 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_vpub import ParticlTestFramework
+from test_framework.test_vpub import VpubTestFramework
 from test_framework.test_vpub import isclose
 
 
-class WalletParticlWatchOnlyTest(ParticlTestFramework):
+class WalletVpubWatchOnlyTest(VpubTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
@@ -47,4 +47,4 @@ class WalletParticlWatchOnlyTest(ParticlTestFramework):
 
 
 if __name__ == '__main__':
-    WalletParticlWatchOnlyTest().main()
+    WalletVpubWatchOnlyTest().main()

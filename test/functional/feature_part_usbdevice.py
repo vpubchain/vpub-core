@@ -8,7 +8,7 @@ import json
 import configparser
 
 from test_framework.test_vpub import (
-    ParticlTestFramework,
+    VpubTestFramework,
     isclose,
     getIndexAtProperty,
 )
@@ -17,7 +17,7 @@ from test_framework.util import connect_nodes_bi
 from test_framework.authproxy import JSONRPCException
 
 
-class USBDeviceTest(ParticlTestFramework):
+class USBDeviceTest(VpubTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

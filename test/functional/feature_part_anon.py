@@ -5,11 +5,11 @@
 
 import json
 
-from test_framework.test_vpub import ParticlTestFramework
+from test_framework.test_vpub import VpubTestFramework
 from test_framework.util import assert_raises_rpc_error, connect_nodes_bi
 
 
-class AnonTest(ParticlTestFramework):
+class AnonTest(VpubTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

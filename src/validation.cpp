@@ -595,7 +595,7 @@ static bool CheckInputsFromMempoolAndCache(const CTransaction& tx, CValidationSt
         if (txFrom) {
             assert(txFrom->GetHash() == txin.prevout.hash);
             assert(txFrom->GetNumVOuts() > txin.prevout.n);
-            if (txFrom->IsParticlVersion())
+            if (txFrom->IsVpubVersion())
             {
                 assert(coin.Matches(txFrom->vpout[txin.prevout.n].get()));
             } else
@@ -1217,7 +1217,7 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
     }
 
     // Check the header
-    if (fParticlMode) {
+    if (fVpubMode) {
         // only CheckProofOfWork for genesis blocks
         if (block.hashPrevBlock.IsNull()
             && !CheckProofOfWork(block.GetHash(), block.nBits, consensusParams, 0, Params().GetLastImportHeight())) {
@@ -1377,7 +1377,7 @@ bool IsInitialBlockDownload()
         && chainActive.Tip()->nHeight > COINBASE_MATURITY
         && chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge))
         return true;
-    if (fParticlMode
+    if (fVpubMode
         && (GetNumPeers() < 1
             || chainActive.Tip()->nHeight < GetNumBlocksOfPeers()-10))
         return true;
@@ -1820,7 +1820,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
         return DISCONNECT_FAILED;
     }
 
-    if (!fParticlMode) {
+    if (!fVpubMode) {
         if (blockUndo.vtxundo.size() + 1 != block.vtx.size()) {
             error("DisconnectBlock(): block and undo data inconsistent");
             return DISCONNECT_FAILED;
@@ -1941,7 +1941,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
         }
 
 
-        if (fParticlMode) {
+        if (fVpubMode) {
             // restore inputs
             if (!tx.IsCoinBase()) {
                 if (nVtxundo < 0 || nVtxundo >= (int)blockUndo.vtxundo.size()) {
@@ -2159,7 +2159,7 @@ static bool IsScriptWitnessEnabled(const Consensus::Params& params)
 static unsigned int GetBlockScriptFlags(const CBlockIndex* pindex, const Consensus::Params& consensusparams) EXCLUSIVE_LOCKS_REQUIRED(cs_main) {
     AssertLockHeld(cs_main);
 
-    if (fParticlMode) {
+    if (fVpubMode) {
         unsigned int flags = SCRIPT_VERIFY_P2SH;
         flags |= SCRIPT_VERIFY_DERSIG;
         flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
@@ -2283,7 +2283,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     bool fIsGenesisBlock = blockHash == chainparams.GetConsensus().hashGenesisBlock;
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
-    if (!fParticlMode  // genesis coinbase is spendable when in Vpub mode
+    if (!fVpubMode  // genesis coinbase is spendable when in Vpub mode
         && fIsGenesisBlock) {
         if (!fJustCheck)
             view.SetBestBlock(pindex->GetBlockHash(), pindex->nHeight);
@@ -2322,7 +2322,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     LogPrint(BCLog::BENCH, "    - Sanity checks: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime1 - nTimeStart), nTimeCheck * MICRO, nTimeCheck * MILLI / nBlocksTotal);
 
     bool fEnforceBIP30 = true;
-    if (!fParticlMode)
+    if (!fVpubMode)
     {
         // Do not allow blocks that contain transactions which 'overwrite' older transactions,
         // unless those are already completely spent.
@@ -2416,7 +2416,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     }
 
     int nLockTimeFlags = 0;
-    if (fParticlMode || VersionBitsState(pindex->pprev, consensus, Consensus::DEPLOYMENT_CSV, versionbitscache) == ThresholdState::ACTIVE) {
+    if (fVpubMode || VersionBitsState(pindex->pprev, consensus, Consensus::DEPLOYMENT_CSV, versionbitscache) == ThresholdState::ACTIVE) {
         nLockTimeFlags |= LOCKTIME_VERIFY_SEQUENCE;
     }
 
@@ -2437,7 +2437,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     int64_t nAnonIn = 0;
     int64_t nStakeReward = 0;
 
-    blockundo.vtxundo.reserve(block.vtx.size() - (fParticlMode ? 0 : 1));
+    blockundo.vtxundo.reserve(block.vtx.size() - (fVpubMode ? 0 : 1));
 
     std::vector<PrecomputedTransactionData> txdata;
     txdata.reserve(block.vtx.size()); // Required so that pointers to individual PrecomputedTransactionData don't get invalidated
@@ -2491,7 +2491,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                                  REJECT_INVALID, "bad-txns-nonfinal");
             }
 
-            if (tx.IsParticlVersion()
+            if (tx.IsVpubVersion()
                 && (fAddressIndex || fSpentIndex)) {
                 // Update spent inputs for insight
                 for (size_t j = 0; j < tx.vin.size(); j++) {
@@ -2661,7 +2661,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     if (!control.Wait())
         return state.DoS(100, error("%s: CheckQueue failed", __func__), REJECT_INVALID, "block-validation-failed");
 
-    if (fParticlMode) {
+    if (fVpubMode) {
         if (block.IsProofOfStake()) { // Only the genesis block isn't proof of stake
             CTransactionRef txCoinstake = block.vtx[0];
             CTransactionRef txPrevCoinstake = nullptr;
@@ -3094,7 +3094,7 @@ void UpdateTip(const CBlockIndex *pindexNew, const CChainParams& chainParams) {
         // Check the version of the last 100 blocks to see if we need to upgrade:
         for (int i = 0; i < 100 && pindex != nullptr; i++)
         {
-            if (fParticlMode)
+            if (fVpubMode)
             {
                 if (pindex->nVersion > VPUB_BLOCK_VERSION)
                     ++nUpgraded;
@@ -3928,18 +3928,18 @@ static bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, 
 
 static bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, const Consensus::Params& consensusParams, bool fCheckPOW = true)
 {
-    if (fParticlMode
-        && !block.IsParticlVersion())
+    if (fVpubMode
+        && !block.IsVpubVersion())
         return state.DoS(100, false, REJECT_INVALID, "block-version", false, "bad block version");
 
     // Check timestamp
-    if (fParticlMode
+    if (fVpubMode
         && !block.hashPrevBlock.IsNull() // allow genesis block to be created in the future
         && block.GetBlockTime() > FutureDrift(GetAdjustedTime()))
         return state.DoS(50, false, REJECT_INVALID, "block-timestamp", false, "block timestamp too far in the future");
 
     // Check proof of work matches claimed amount
-    if (!fParticlMode
+    if (!fVpubMode
         && fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, consensusParams))
         return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
 
@@ -4060,7 +4060,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
     if (block.vtx.empty() || block.vtx.size() * WITNESS_SCALE_FACTOR > MAX_BLOCK_WEIGHT || ::GetSerializeSize(block, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) * WITNESS_SCALE_FACTOR > MAX_BLOCK_WEIGHT)
         return state.DoS(100, false, REJECT_INVALID, "bad-blk-length", false, "size limits failed");
 
-    if (fParticlMode) {
+    if (fVpubMode) {
         if (!IsInitialBlockDownload()
             && block.vtx[0]->IsCoinStake()
             && !CheckStakeUnique(block)) {
@@ -4129,7 +4129,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
 
 bool IsWitnessEnabled(const CBlockIndex* pindexPrev, const Consensus::Params& params)
 {
-    if (fParticlMode) return true;
+    if (fVpubMode) return true;
 
     LOCK(cs_main);
     return (VersionBitsState(pindexPrev, params, Consensus::DEPLOYMENT_SEGWIT, versionbitscache) == ThresholdState::ACTIVE);
@@ -4171,7 +4171,7 @@ void UpdateUncommittedBlockStructures(CBlock& block, const CBlockIndex* pindexPr
 std::vector<unsigned char> GenerateCoinbaseCommitment(CBlock& block, const CBlockIndex* pindexPrev, const Consensus::Params& consensusParams)
 {
     std::vector<unsigned char> commitment;
-    if (fParticlMode)
+    if (fVpubMode)
         return commitment;
 
     int commitpos = GetWitnessCommitmentIndex(block);
@@ -4278,7 +4278,7 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
     const int nHeight = pindexPrev == nullptr ? 0 : pindexPrev->nHeight + 1;
     const Consensus::Params& consensusParams = params.GetConsensus();
 
-    if (fParticlMode && pindexPrev)
+    if (fVpubMode && pindexPrev)
     {
         // Check proof-of-stake
         if (block.nBits != GetNextTargetRequired(pindexPrev))
@@ -4333,7 +4333,7 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
 
     // Start enforcing BIP113 (Median Time Past) using versionbits logic.
     int nLockTimeFlags = 0;
-    if (fParticlMode) {
+    if (fVpubMode) {
         nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
     } else {
         if (VersionBitsState(pindexPrev, consensusParams, Consensus::DEPLOYMENT_CSV, versionbitscache) == ThresholdState::ACTIVE) {
@@ -4353,7 +4353,7 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
         }
     }
 
-    if (fParticlMode) {
+    if (fVpubMode) {
         // Enforce rule that the coinbase/coinstake ends with serialized block height
         // genesis block scriptSig size will be different
 
@@ -4723,7 +4723,7 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, CValidationState&
         if (miSelf != mapBlockIndex.end()) {
             // Block header is already known.
 
-            if (fParticlMode && !IsInitialBlockDownload() && state.nodeId >= 0
+            if (fVpubMode && !IsInitialBlockDownload() && state.nodeId >= 0
                 && !IncDuplicateHeaders(state.nodeId)) {
                     return state.DoS(5, error("%s: DoS limits, too many duplicates", __func__), REJECT_INVALID, "dos-limits");
             }
@@ -4802,7 +4802,7 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, CValidationState&
     }
     if (pindex == nullptr) {
         bool force_accept = true;
-        if (fParticlMode && !IsInitialBlockDownload() && state.nodeId >= 0) {
+        if (fVpubMode && !IsInitialBlockDownload() && state.nodeId >= 0) {
             if (!AddNodeHeader(state.nodeId, hash)) {
                 return state.DoS(20, error("%s: DoS limits", __func__), REJECT_INVALID, "dos-limits");
             }
@@ -4919,7 +4919,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, CVali
             || (pindex->pprev->bnStakeModifier.IsNull()
                 && pindex->pprev->GetBlockHash() != chainparams.GetConsensus().hashGenesisBlock)) {
             // Block received out of order
-            if (fParticlMode && !IsInitialBlockDownload()) {
+            if (fVpubMode && !IsInitialBlockDownload()) {
                 if (pindex->nFlags & BLOCK_DELAYED) {
                     // block is already delayed
                     state.nFlags |= BLOCK_DELAYED;
@@ -5013,7 +5013,7 @@ bool ProcessNewBlock(const CChainParams& chainparams, const std::shared_ptr<cons
             return true;
         }
         if (!ret) {
-            if (fParticlMode) {
+            if (fVpubMode) {
                 // Mark block as invalid to prevent re-requesting from peer.
                 // Block will have been added to the block index in AcceptBlockHeader
                 CBlockIndex *pindex = g_chainstate.AddToBlockIndex(*pblock);

@@ -42,7 +42,7 @@ public:
         READWRITE(nVersion);
         READWRITE(hashPrevBlock);
         READWRITE(hashMerkleRoot);
-        if (IsParticlVersion()) {
+        if (IsVpubVersion()) {
             READWRITE(hashWitnessMerkleRoot);
         }
         READWRITE(nTime);
@@ -68,7 +68,7 @@ public:
 
     uint256 GetHash() const;
 
-    bool IsParticlVersion() const
+    bool IsVpubVersion() const
     {
         return nVersion == VPUB_BLOCK_VERSION;
     }

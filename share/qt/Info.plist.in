@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.vpub.ParticlPayment</string>
+      <string>org.vpub.VpubPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>vpub</string>

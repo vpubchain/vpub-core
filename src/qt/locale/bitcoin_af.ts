@@ -1733,7 +1733,7 @@ transaksievertragingsrisiko.</translation>
     </message>
     <message>
         <source>Warning: Invalid Vpub address</source>
-        <translation>Waarskuwing: Ongeldige Particladres</translation>
+        <translation>Waarskuwing: Ongeldige Vpubadres</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1766,7 +1766,7 @@ Is u seker?</translation>
     </message>
     <message>
         <source>The Vpub address to send the payment to</source>
-        <translation>Die Particladres waarheen die betaling gestuur word</translation>
+        <translation>Die Vpubadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
         <source>Alt+A</source>

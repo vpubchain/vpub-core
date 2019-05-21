@@ -841,9 +841,9 @@ int64_t CalculateMaximumSignedTxSize(const CTransaction &tx, const CHDWallet *wa
 
 void RestartStakingThreads();
 
-bool IsParticlWallet(const CKeyStore *win);
-CHDWallet *GetParticlWallet(CKeyStore *win);
-const CHDWallet *GetParticlWallet(const CKeyStore *win);
+bool IsVpubWallet(const CKeyStore *win);
+CHDWallet *GetVpubWallet(CKeyStore *win);
+const CHDWallet *GetVpubWallet(const CKeyStore *win);
 
 
 #endif // VPUB_WALLET_HDWALLET_H

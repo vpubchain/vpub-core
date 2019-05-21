@@ -77,8 +77,8 @@ const int64_t nStartupTime = GetTime();
 const char * const BITCOIN_CONF_FILENAME = "vpub.conf";
 const char * const BITCOIN_PID_FILENAME = "vpubd.pid";
 
-bool fParticlMode = true;
-bool fParticlWallet = false;
+bool fVpubMode = true;
+bool fVpubWallet = false;
 ArgsManager gArgs;
 
 /** A map that contains all the currently held directory locks. After
