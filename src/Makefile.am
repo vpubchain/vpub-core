@@ -88,7 +88,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += particld
+  bin_PROGRAMS += vpubd
 endif
 
 if BUILD_BITCOIN_CLI

@@ -1,7 +1,7 @@
 dist_man1_MANS=
 
 if BUILD_BITCOIND
-  dist_man1_MANS+=particld.1
+  dist_man1_MANS+=vpubd.1
 endif
 
 if ENABLE_QT

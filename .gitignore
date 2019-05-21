@@ -2,7 +2,7 @@
 
 *.exe
 src/vpub
-src/particld
+src/vpubd
 src/vpub-cli
 src/vpub-tx
 src/vpub-wallet

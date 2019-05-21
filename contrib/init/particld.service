@@ -7,8 +7,8 @@ User=vpub
 Group=vpub
 
 Type=forking
-PIDFile=/home/vpub/.vpub/particld.pid
-ExecStart=/home/vpub/Vpub/particld -daemon -pid=/home/vpub/.vpub/particld.pid \
+PIDFile=/home/vpub/.vpub/vpubd.pid
+ExecStart=/home/vpub/Vpub/vpubd -daemon -pid=/home/vpub/.vpub/vpubd.pid \
 -conf=/home/vpub/.vpub/vpub.conf -datadir=/home/vpub/.vpub
 
 ExecStop=/home/vpub/Vpub/vpub-cli -conf=/home/vpub/.vpub/vpub.conf stop
