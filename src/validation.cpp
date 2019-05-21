@@ -3096,7 +3096,7 @@ void UpdateTip(const CBlockIndex *pindexNew, const CChainParams& chainParams) {
         {
             if (fParticlMode)
             {
-                if (pindex->nVersion > PARTICL_BLOCK_VERSION)
+                if (pindex->nVersion > VPUB_BLOCK_VERSION)
                     ++nUpgraded;
             } else
             {

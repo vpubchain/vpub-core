@@ -24,42 +24,42 @@ BITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFL
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBPARTICL_SERVER=libvpub_server.a
-LIBPARTICL_COMMON=libvpub_common.a
-LIBPARTICL_CONSENSUS=libvpub_consensus.a
-LIBPARTICL_CLI=libvpub_cli.a
-LIBPARTICL_UTIL=libvpub_util.a
-LIBPARTICL_CRYPTO_BASE=crypto/libvpub_crypto_base.a
-LIBPARTICLQT=qt/libvpubqt.a
+LIBVPUB_SERVER=libvpub_server.a
+LIBVPUB_COMMON=libvpub_common.a
+LIBVPUB_CONSENSUS=libvpub_consensus.a
+LIBVPUB_CLI=libvpub_cli.a
+LIBVPUB_UTIL=libvpub_util.a
+LIBVPUB_CRYPTO_BASE=crypto/libvpub_crypto_base.a
+LIBVPUBQT=qt/libvpubqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
-LIBPARTICL_SMSG=libvpub_smsg.a
+LIBVPUB_SMSG=libvpub_smsg.a
 
 if ENABLE_ZMQ
-LIBPARTICL_ZMQ=libvpub_zmq.a
+LIBVPUB_ZMQ=libvpub_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBPARTICLCONSENSUS=libvpubconsensus.la
+LIBVPUBCONSENSUS=libvpubconsensus.la
 endif
 if ENABLE_WALLET
-LIBPARTICL_WALLET=libvpub_wallet.a
-LIBPARTICL_WALLET_TOOL=libvpub_wallet_tool.a
+LIBVPUB_WALLET=libvpub_wallet.a
+LIBVPUB_WALLET_TOOL=libvpub_wallet_tool.a
 endif
 if ENABLE_USBDEVICE
-LIBPARTICL_USBDEVICE=libvpub_usbdevice.a
+LIBVPUB_USBDEVICE=libvpub_usbdevice.a
 endif
 
-LIBPARTICL_CRYPTO= $(LIBPARTICL_CRYPTO_BASE)
+LIBVPUB_CRYPTO= $(LIBVPUB_CRYPTO_BASE)
 if ENABLE_SSE41
-LIBPARTICL_CRYPTO_SSE41 = crypto/libvpub_crypto_sse41.a
-LIBPARTICL_CRYPTO += $(LIBPARTICL_CRYPTO_SSE41)
+LIBVPUB_CRYPTO_SSE41 = crypto/libvpub_crypto_sse41.a
+LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_SSE41)
 endif
 if ENABLE_AVX2
-LIBPARTICL_CRYPTO_AVX2 = crypto/libvpub_crypto_avx2.a
-LIBPARTICL_CRYPTO += $(LIBPARTICL_CRYPTO_AVX2)
+LIBVPUB_CRYPTO_AVX2 = crypto/libvpub_crypto_avx2.a
+LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_AVX2)
 endif
 if ENABLE_SHANI
-LIBPARTICL_CRYPTO_SHANI = crypto/libvpub_crypto_shani.a
-LIBPARTICL_CRYPTO += $(LIBPARTICL_CRYPTO_SHANI)
+LIBVPUB_CRYPTO_SHANI = crypto/libvpub_crypto_shani.a
+LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_SHANI)
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
@@ -68,19 +68,19 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(w
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBPARTICL_CRYPTO) \
-  $(LIBPARTICL_UTIL) \
-  $(LIBPARTICL_COMMON) \
-  $(LIBPARTICL_CONSENSUS) \
-  $(LIBPARTICL_SERVER) \
-  $(LIBPARTICL_CLI) \
-  $(LIBPARTICL_WALLET) \
-  $(LIBPARTICL_WALLET_TOOL) \
-  $(LIBPARTICL_USBDEVICE) \
-  $(LIBPARTICL_SMSG) \
-  $(LIBPARTICL_ZMQ)
+  $(LIBVPUB_CRYPTO) \
+  $(LIBVPUB_UTIL) \
+  $(LIBVPUB_COMMON) \
+  $(LIBVPUB_CONSENSUS) \
+  $(LIBVPUB_SERVER) \
+  $(LIBVPUB_CLI) \
+  $(LIBVPUB_WALLET) \
+  $(LIBVPUB_WALLET_TOOL) \
+  $(LIBVPUB_USBDEVICE) \
+  $(LIBVPUB_SMSG) \
+  $(LIBVPUB_ZMQ)
 
-lib_LTLIBRARIES = $(LIBPARTICLCONSENSUS)
+lib_LTLIBRARIES = $(LIBVPUBCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
@@ -612,20 +612,20 @@ vpubd_SOURCES += bitcoind-res.rc
 endif
 
 vpubd_LDADD = \
-  $(LIBPARTICL_SERVER) \
-  $(LIBPARTICL_WALLET) \
-  $(LIBPARTICL_COMMON) \
+  $(LIBVPUB_SERVER) \
+  $(LIBVPUB_WALLET) \
+  $(LIBVPUB_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBPARTICL_UTIL) \
-  $(LIBPARTICL_ZMQ) \
-  $(LIBPARTICL_CONSENSUS) \
-  $(LIBPARTICL_CRYPTO) \
+  $(LIBVPUB_UTIL) \
+  $(LIBVPUB_ZMQ) \
+  $(LIBVPUB_CONSENSUS) \
+  $(LIBVPUB_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1) \
-  $(LIBPARTICL_SMSG) \
-  $(LIBPARTICL_USBDEVICE)
+  $(LIBVPUB_SMSG) \
+  $(LIBVPUB_USBDEVICE)
 
 vpubd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 if ENABLE_USBDEVICE
@@ -644,10 +644,10 @@ vpub_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 vpub_cli_LDADD = \
-  $(LIBPARTICL_CLI) \
+  $(LIBVPUB_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBPARTICL_UTIL) \
-  $(LIBPARTICL_CRYPTO)
+  $(LIBVPUB_UTIL) \
+  $(LIBVPUB_CRYPTO)
 
 vpub_cli_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
@@ -664,10 +664,10 @@ endif
 
 vpub_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBPARTICL_COMMON) \
-  $(LIBPARTICL_UTIL) \
-  $(LIBPARTICL_CONSENSUS) \
-  $(LIBPARTICL_CRYPTO) \
+  $(LIBVPUB_COMMON) \
+  $(LIBVPUB_UTIL) \
+  $(LIBVPUB_CONSENSUS) \
+  $(LIBVPUB_CRYPTO) \
   $(LIBSECP256K1)
 
 vpub_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
@@ -684,16 +684,16 @@ vpub_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 
 vpub_wallet_LDADD = \
-  $(LIBPARTICL_WALLET_TOOL) \
-  $(LIBPARTICL_SERVER) \
-  $(LIBPARTICL_WALLET) \
-  $(LIBPARTICL_COMMON) \
-  $(LIBPARTICL_CONSENSUS) \
-  $(LIBPARTICL_UTIL) \
-  $(LIBPARTICL_CRYPTO) \
-  $(LIBPARTICL_SMSG) \
-  $(LIBPARTICL_USBDEVICE) \
-  $(LIBPARTICL_ZMQ) \
+  $(LIBVPUB_WALLET_TOOL) \
+  $(LIBVPUB_SERVER) \
+  $(LIBVPUB_WALLET) \
+  $(LIBVPUB_COMMON) \
+  $(LIBVPUB_CONSENSUS) \
+  $(LIBVPUB_UTIL) \
+  $(LIBVPUB_CRYPTO) \
+  $(LIBVPUB_SMSG) \
+  $(LIBVPUB_USBDEVICE) \
+  $(LIBVPUB_ZMQ) \
   $(LIBUNIVALUE) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
