@@ -3150,7 +3150,7 @@
     <message>
         <location line="+4"/>
         <location line="+22"/>
-        <source>Part</source>
+        <source>Vp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
