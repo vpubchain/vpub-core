@@ -72,8 +72,8 @@ class FilterTransactionsTest(VpubTestFramework):
 
         # several outputs
         nodes[0].sendtypeto(
-            'part',               # type in
-            'part',               # type out
+            'vp',               # type in
+            'vp',               # type out
             [                     # outputs
                 {
                     'address':    selfAddress,
