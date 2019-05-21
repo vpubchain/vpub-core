@@ -1,11 +1,11 @@
 *.tar.gz
 
 *.exe
-src/particl
+src/vpub
 src/particld
-src/particl-cli
-src/particl-tx
-src/particl-wallet
+src/vpub-cli
+src/vpub-tx
+src/vpub-wallet
 src/test/test_particl
 src/test/test_particl_fuzzy
 src/qt/test/test_particl-qt
@@ -52,11 +52,11 @@ src/qt/bitcoin-qt.creator.user
 src/qt/bitcoin-qt.files
 src/qt/bitcoin-qt.includes
 
-src/qt/particl-qt.config
-src/qt/particl-qt.creator
-src/qt/particl-qt.creator.user
-src/qt/particl-qt.files
-src/qt/particl-qt.includes
+src/qt/vpub-qt.config
+src/qt/vpub-qt.creator
+src/qt/vpub-qt.creator.user
+src/qt/vpub-qt.files
+src/qt/vpub-qt.includes
 
 .deps
 .dirstamp
@@ -88,13 +88,13 @@ src/qt/particl-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-particl-qt
+vpub-qt
 Vpub-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-particl-qt_test
+vpub-qt_test
 
 # Resources cpp
 qrc_*.cpp

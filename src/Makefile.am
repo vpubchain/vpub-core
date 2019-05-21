@@ -92,14 +92,14 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += particl-cli
+  bin_PROGRAMS += vpub-cli
 endif
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += particl-tx
+  bin_PROGRAMS += vpub-tx
 endif
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += particl-wallet
+  bin_PROGRAMS += vpub-wallet
 endif
 endif
 
