@@ -473,10 +473,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xf2;
-        pchMessageStart[2] = 0xef;
-        pchMessageStart[3] = 0xb4;
+        pchMessageStart[0] = 0x90;
+        pchMessageStart[1] = 0x9a;
+        pchMessageStart[2] = 0x90;
+        pchMessageStart[3] = 0x9b;
         nDefaultPort = 51758;
         nBIP44ID = 0x8000002C;
 
@@ -687,10 +687,10 @@ public:
 
         consensus.nMinRCTOutputDepth = 12;
 
-        pchMessageStart[0] = 0x0a;
-        pchMessageStart[1] = 0x11;
-        pchMessageStart[2] = 0x05;
-        pchMessageStart[3] = 0x0b;
+        pchMessageStart[0] = 0x90;
+        pchMessageStart[1] = 0x9c;
+        pchMessageStart[2] = 0x90;
+        pchMessageStart[3] = 0x9d;
         nDefaultPort = 51958;
         nBIP44ID = 0x80000001;
 
