@@ -548,7 +548,7 @@ public:
             DevFundSettings("RAJ3GeQ2UsCrqpPSS36pcDPnk2X4Ydi9kS", 10, 60));
 
 
-        base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
+        base58Prefixes[PUBKEY_ADDRESS]     = {0x46}; // V
         base58Prefixes[SCRIPT_ADDRESS]     = {0x3c};
         base58Prefixes[PUBKEY_ADDRESS_256] = {0x39};
         base58Prefixes[SCRIPT_ADDRESS_256] = {0x3d};
@@ -754,9 +754,9 @@ public:
         //vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTvv9vsbu269mjYYEecPYinDG8Bt7D86qD", 10, 60)));
         vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rQApnBUWAmJ28PHzaFw9gPeqiDFBxPWK3B", 10, 100)));
 
-        base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
-        base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};
-        base58Prefixes[PUBKEY_ADDRESS_256] = {0x77};
+        base58Prefixes[PUBKEY_ADDRESS]     = {0x84}; // v
+        base58Prefixes[SCRIPT_ADDRESS]     = {0x7a}; // r
+        base58Prefixes[PUBKEY_ADDRESS_256] = {0x77}; // p or q
         base58Prefixes[SCRIPT_ADDRESS_256] = {0x7b};
         base58Prefixes[SECRET_KEY]         = {0x2e};
         base58Prefixes[EXT_PUBLIC_KEY]     = {0xe1, 0x42, 0x78, 0x00}; // ppar
