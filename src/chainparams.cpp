@@ -528,7 +528,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x01125f7441b791ede68f059b45966f351083b59b128d6c3c718daa530cd449a3"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0x52153a5c4e21ffa74bb43d1ce361be4cfff2966d9c7dad137b1b11852c0c8bb8"));
 
-	//assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
+	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
         //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
         //assert(genesis.hashWitnessMerkleRoot == uint256S("0x619e94a7f9f04c8a1d018eb8bcd9c42d3c23171ebed8f351872256e36959d66c"));
 
