@@ -559,8 +559,8 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
         newRequest.fSkipBlock = true; // already blocked in this function
         newRequest.URI = request.URI;
         UniValue params(UniValue::VARR);
-        params.push_back("vp"); 
-        params.push_back("vp");
+        params.push_back("part"); 
+        params.push_back("part");
         UniValue arr(UniValue::VARR);
         UniValue out(UniValue::VOBJ);
 
