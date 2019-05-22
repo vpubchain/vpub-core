@@ -540,6 +540,8 @@ public:
         //vSeeds.emplace_back("mainnet-seed.vpub.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vpub.io");
         //vSeeds.emplace_back("mainnet.vpub.io");
+        vSeeds.emplace_back("47.105.157.227");
+        vSeeds.emplace_back("47.105.68.82");
 
 
         vDevFundSettings.emplace_back(0,
