@@ -752,6 +752,8 @@ public:
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.emplace_back("testnet-seed.vpub.io");
         //vSeeds.emplace_back("dnsseed-testnet.vpub.io");
+        vSeeds.emplace_back("47.105.68.82");
+        vSeeds.emplace_back("47.105.157.227");
 
         //vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTvv9vsbu269mjYYEecPYinDG8Bt7D86qD", 10, 60)));
         vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rQApnBUWAmJ28PHzaFw9gPeqiDFBxPWK3B", 10, 100)));
