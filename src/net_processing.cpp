@@ -2356,6 +2356,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
             CKeyID keyID;
             CScript coinstakePath;
+            UniValue coldStakeObj(UniValue::VARR);
+
             for (const auto &out : vecOutputs) {
                 const CScript *scriptPubKey = out.tx->tx->vpout[out.i]->GetPScriptPubKey();
                 CAmount nValue = out.tx->tx->vpout[out.i]->GetValue();
@@ -2374,6 +2376,26 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                             continue;
                         }
                     }
+
+                    CScript scriptCS;
+                    txnouttype type;
+                    std::vector<CTxDestination> addresses;
+                    int nRequired;
+                    UniValue itemColdStakeAddress(UniValue::VOBJ);
+                    if (GetCoinstakeScriptPath(*scriptPubKey, scriptCS)
+                        && ExtractDestinations(scriptCS, type, addresses, nRequired)) {
+                        UniValue a(UniValue::VARR);
+                        for (const CTxDestination& addr : addresses) {
+                            a.push_back(EncodeDestination(addr));
+                        }
+                        itemColdStakeAddress.pushKV("addresses", a);
+                        itemColdStakeAddress.pushKV("value", nValue);
+                        coldStakeObj.push_back(itemColdStakeAddress);
+
+                        //tmpColdStakeAddress.nColdStakeable = nValue;
+                        //vecColdStakeAddress.push_back(tmpColdStakeAddress);
+                    }
+
                     nColdStakeable += nValue;
                 } else {
                     continue;
@@ -2423,12 +2445,41 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             obj.pushKV("percent_in_coldstakeable_script",
             UniValue(UniValue::VNUM, strprintf("%.2f", nTotal == 0 ? 0.0 : (nColdStakeable * 10000 / nTotal) / 100.0)));
             obj.pushKV("currently_staking", ValueFromAmount(nWalletStaking));
-
-            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, fEnabled, nStakeable, nColdStakeable, nTotal, nWalletStaking));
+            obj.pushKV("coldstake_list", coldStakeObj);
+            
+            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, obj.write()));
+            //connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, fEnabled, nStakeable, nColdStakeable, nTotal, nWalletStaking));
             //connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, obj.get("enabled").get_bool(), obj.get("coin_in_stakeable_script").get_int64(), obj.get("coin_in_coldstakeable_script").get_int64(), obj.get("percent_in_coldstakeable_script").get_int64(), obj.get("currently_staking").get_int64()));    
         }
+/*
+        { //just for test
+            UniValue obj(UniValue::VOBJ);
+            obj.pushKV("enabled", true);
+            obj.pushKV("coin_in_stakeable_script", ValueFromAmount(0));
+            obj.pushKV("coin_in_coldstakeable_script", ValueFromAmount(0));
+            CAmount nTotal = 0;
+            obj.pushKV("percent_in_coldstakeable_script",
+            UniValue(UniValue::VNUM, strprintf("%.2f", nTotal == 0 ? 0.0 : (0 * 10000 / nTotal) / 100.0)));
+            obj.pushKV("currently_staking", ValueFromAmount(0));
 
+            UniValue itemColdStakeAddress(UniValue::VOBJ);
+            UniValue coldStakeObj(UniValue::VARR);
+            
+            UniValue a(UniValue::VARR);
+            //a.pushKV("addresses", "2uzteocFHpW4RD8fwReveXWryQWxdwvTz3zJgzN3ZnNPGCNmWyq:1");
+            a.push_back("2uzteocFHpW4RD8fwReveXWryQWxdwvTz3zJgzN3ZnNPGCNmWyq");
+            itemColdStakeAddress.pushKV("coldstakeaddresses", a);
+            itemColdStakeAddress.pushKV("coldstakevalue", 1914.775574);
 
+            //coldStakeObj.push_back();
+            coldStakeObj.push_back(itemColdStakeAddress);
+            //obj.pushKV("coldstake_list", coldStakeObj);
+            obj.pushKV("coldstake_list", coldStakeObj);
+            //obj.pushKV("coldstake_list", a);
+            
+            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, obj.write()));
+            //connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::GETCOLDST, obj.write()));
+        }*/
         //const CRPCCommand command = { "wallet",             "getcoldstakinginfo",               &getcoldstakinginfo,            {} };
         return true;
     }
