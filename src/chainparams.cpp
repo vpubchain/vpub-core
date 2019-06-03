@@ -719,16 +719,16 @@ public:
         uint256 hash;
 
         bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                std::cout << "target:" << bnTarget.GetHex() << std::endl;
+        std::cout << "target:" << bnTarget.GetHex() << std::endl;
 
-                for (i = 0; i < 4294967295; i++) {
-                genesis.nNonce=i;
-                hash = genesis.GetHash();
-                //std::cout << "hash:" << hash.GetHex() << std::endl;
-                if (UintToArith256(hash) <= bnTarget){
-                        //std::cout << "nonce:" << i << std::endl;
-                        break;
-                }
+        for (i = 0; i < 4294967295; i++) {
+            genesis.nNonce=i;
+            hash = genesis.GetHash();
+            //std::cout << "hash:" << hash.GetHex() << std::endl;
+            if (UintToArith256(hash) <= bnTarget){
+                //std::cout << "nonce:" << i << std::endl;
+                break;
+            }
         }
         hash = genesis.GetHash();
         if (UintToArith256(hash) <= bnTarget){
