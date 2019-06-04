@@ -2382,7 +2382,19 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                     std::vector<CTxDestination> addresses;
                     int nRequired;
                     UniValue itemColdStakeAddress(UniValue::VOBJ);
-                    if (GetCoinstakeScriptPath(*scriptPubKey, scriptCS)
+
+                    if (ExtractDestinations(*scriptPubKey, type, addresses, nRequired)) {
+                        UniValue a(UniValue::VARR);
+                        for (const CTxDestination& addr : addresses) {
+                            a.push_back(EncodeDestination(addr));
+                        }
+
+                        itemColdStakeAddress.pushKV("addresses", a);
+                        itemColdStakeAddress.pushKV("value", nValue);
+                        coldStakeObj.push_back(itemColdStakeAddress);
+                    }
+
+                    /*if (GetCoinstakeScriptPath(*scriptPubKey, scriptCS)
                         && ExtractDestinations(scriptCS, type, addresses, nRequired)) {
                         UniValue a(UniValue::VARR);
                         for (const CTxDestination& addr : addresses) {
@@ -2394,7 +2406,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
                         //tmpColdStakeAddress.nColdStakeable = nValue;
                         //vecColdStakeAddress.push_back(tmpColdStakeAddress);
-                    }
+                    }*/
 
                     nColdStakeable += nValue;
                 } else {
