@@ -109,6 +109,7 @@ EXPECTED_HOLDER_NAMES = [
     "The PPCoin developers\n",
     "The BlackCoin developers\n",
     "The ShadowCoin developers\n",
+    "The Particl Core developers\n",
     "The Vpub Core developers\n",
 ]
 
