@@ -40,7 +40,7 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
 {
     int64_t nSubsidy;
     // 1~1440 block reward =0 : lkz 2019-5-11
-    if (pindexPrev->nHeight >= 0 && pindexPrev->nHeight <= 1440){
+    if (pindexPrev->nHeight >= 0 && pindexPrev->nHeight < 1440){
         nSubsidy = 0 ;
     } else {
        nSubsidy = (pindexPrev->nMoneySupply / COIN) * GetCoinYearReward(pindexPrev->nTime) / (365 * 24 * (60 * 60 / nTargetSpacing));
@@ -176,63 +176,62 @@ const size_t nGenesisOutputsRegtest = sizeof(regTestOutputs) / sizeof(regTestOut
 
 const std::pair<const char*, CAmount> genesisOutputs[] = {       
     //wallet-1
-    std::make_pair("65c4a17e0bf327e48ecbf27c71364469c771288d",24695    * COIN),
-    std::make_pair("45037fa2cd48bbcb2bf3f7162e0b98a414e3a07c",24695    * COIN),
-    std::make_pair("ac9dd4989639205b58877abccb72b2444dda0ce2",24695    * COIN),
-    std::make_pair("91935e6a721cd13f70421561ed72c7799da815e8",24695    * COIN),
-    std::make_pair("f996659f7b18f28096b2a9131883151dce3efe47",24695    * COIN),
+    std::make_pair("65c4a17e0bf327e48ecbf27c71364469c771288d",5000    * COIN),
+    std::make_pair("45037fa2cd48bbcb2bf3f7162e0b98a414e3a07c",5000    * COIN),
+    std::make_pair("ac9dd4989639205b58877abccb72b2444dda0ce2",5000    * COIN),
+    std::make_pair("91935e6a721cd13f70421561ed72c7799da815e8",5000    * COIN),
+    std::make_pair("f996659f7b18f28096b2a9131883151dce3efe47",5000    * COIN),
     
-    std::make_pair("626d64ed4a15bc707c8be1ec594ec4e40090f8d3",24695    * COIN),
-    std::make_pair("2c995fdfa9acb9f041853283a87c3b060b6695d1",24695    * COIN),
-    std::make_pair("4c5d2193c3542234c03668a4683ac8227a753795",24695    * COIN),
-    std::make_pair("3d54258eccfdf4d307d502ba47049ab7ce3e19f9",24695    * COIN),
-    std::make_pair("b34a9152197e6728511e3ddf33ffb63232a19ace",24695    * COIN),
+    std::make_pair("626d64ed4a15bc707c8be1ec594ec4e40090f8d3",5000    * COIN),
+    std::make_pair("2c995fdfa9acb9f041853283a87c3b060b6695d1",5000    * COIN),
+    std::make_pair("4c5d2193c3542234c03668a4683ac8227a753795",5000    * COIN),
+    std::make_pair("3d54258eccfdf4d307d502ba47049ab7ce3e19f9",5000    * COIN),
+    std::make_pair("b34a9152197e6728511e3ddf33ffb63232a19ace",5000    * COIN),
     
-    std::make_pair("99146c9fc55564fc79363c8f88cc61a4a8e6581e",24695    * COIN),
-    std::make_pair("a9d280cce4152fd8e0592cfd9980e8b97415edef",24695    * COIN),
-    std::make_pair("473eb08b8565b8d708c892b11c0cca977db13512",24695    * COIN),
-    std::make_pair("6d2bc306ee90aec445936ede34eea2269b4c767a",24695    * COIN),
-    std::make_pair("81898fec6c1c2ecc4d2a6335c2b9a87243ad5ef7",24695    * COIN),  
+    std::make_pair("99146c9fc55564fc79363c8f88cc61a4a8e6581e",5000    * COIN),
+    std::make_pair("a9d280cce4152fd8e0592cfd9980e8b97415edef",5000    * COIN),
+    std::make_pair("473eb08b8565b8d708c892b11c0cca977db13512",5000    * COIN),
+    std::make_pair("6d2bc306ee90aec445936ede34eea2269b4c767a",5000    * COIN),
+    std::make_pair("81898fec6c1c2ecc4d2a6335c2b9a87243ad5ef7",5000    * COIN),  
     
-    std::make_pair("57e6997b823048fac905f4d84b93033a946f94f0",24695    * COIN),
-    std::make_pair("1cd9d068948153835cf0c1197bc207ce76de16be",24695    * COIN),
-    std::make_pair("0903dec6dbdea193de8ada829edc7cf9f912b107",24695    * COIN),
-    std::make_pair("5f59e4496cc9b93e0d4839cf635850909d662564",24695    * COIN),
-    std::make_pair("485f78be76febe5814b28744ca6d6e141f91d167",24695    * COIN),
+    std::make_pair("57e6997b823048fac905f4d84b93033a946f94f0",5000    * COIN),
+    std::make_pair("1cd9d068948153835cf0c1197bc207ce76de16be",5000    * COIN),
+    std::make_pair("0903dec6dbdea193de8ada829edc7cf9f912b107",5000    * COIN),
+    std::make_pair("5f59e4496cc9b93e0d4839cf635850909d662564",5000    * COIN),
+    std::make_pair("485f78be76febe5814b28744ca6d6e141f91d167",5000    * COIN),
     //wallet-2
-    std::make_pair("91dc3d7313bd110c962746cf9374f42f4c593cd9",24695    * COIN),
-    std::make_pair("e89bba31c6f03a14dedd22d93647b828ad37a790",24695    * COIN),
-    std::make_pair("2f08154b5d9c3f814178f9a958c9d730d4d6a390",24695    * COIN),
-    std::make_pair("290aa9f29385849a44b5276d2af7572dfc4dd788",24695    * COIN),
-    std::make_pair("1ddad8b38f6314b0e191a698f32e439211430b66",24695    * COIN),
+    std::make_pair("91dc3d7313bd110c962746cf9374f42f4c593cd9",5000    * COIN),
+    std::make_pair("e89bba31c6f03a14dedd22d93647b828ad37a790",5000    * COIN),
+    std::make_pair("2f08154b5d9c3f814178f9a958c9d730d4d6a390",5000    * COIN),
+    std::make_pair("290aa9f29385849a44b5276d2af7572dfc4dd788",5000    * COIN),
+    std::make_pair("1ddad8b38f6314b0e191a698f32e439211430b66",5000    * COIN),
     
-    std::make_pair("ba77337dceb08ace1f1bc2452f5df7690204c3d8",24695    * COIN),
-    std::make_pair("e1bad841bf14bf2d5b6561511986c10b0c38a3c6",24695    * COIN),
-    std::make_pair("3dc8ec6b6f270276b9566c47577c989951d97322",24695    * COIN),
-    std::make_pair("26a963b19784482f45b6795701a77ac7493e6bfc",24695    * COIN),
-    std::make_pair("f5adeb2820318d223955d50d692894762a0459e5",24695    * COIN),
+    std::make_pair("ba77337dceb08ace1f1bc2452f5df7690204c3d8",5000    * COIN),
+    std::make_pair("e1bad841bf14bf2d5b6561511986c10b0c38a3c6",5000    * COIN),
+    std::make_pair("3dc8ec6b6f270276b9566c47577c989951d97322",5000    * COIN),
+    std::make_pair("26a963b19784482f45b6795701a77ac7493e6bfc",5000    * COIN),
+    std::make_pair("f5adeb2820318d223955d50d692894762a0459e5",5000    * COIN),
     
-    std::make_pair("8fb75a7a5df366aeb9501fd0300fd9e0ae5a242e",24695    * COIN),
-    std::make_pair("ad352c2c804f6f9970e5e64e77ff3ad9b5fb68a7",24695    * COIN),
-    std::make_pair("61c8002d4e22bcc7230fa9540d7b6567d0a99dbb",24695    * COIN),
-    std::make_pair("f790c33189306efc43864931004912f204d4f49f",24695    * COIN),
-    std::make_pair("7f03c5b051caf5cd5e880ae3eede5bf237742125",24695    * COIN),
+    std::make_pair("8fb75a7a5df366aeb9501fd0300fd9e0ae5a242e",5000    * COIN),
+    std::make_pair("ad352c2c804f6f9970e5e64e77ff3ad9b5fb68a7",5000    * COIN),
+    std::make_pair("61c8002d4e22bcc7230fa9540d7b6567d0a99dbb",5000    * COIN),
+    std::make_pair("f790c33189306efc43864931004912f204d4f49f",5000    * COIN),
+    std::make_pair("7f03c5b051caf5cd5e880ae3eede5bf237742125",5000    * COIN),
     
-    std::make_pair("072a6f113f219ce075129a8de051b4e30e8637b1",24695    * COIN),
-    std::make_pair("0e3cc5c13ded120fa723c5a0d34990e3e214856f",24695    * COIN),
-    std::make_pair("fe3e724d5621d89210427b07623723e4e54cc565",24695    * COIN),
-    std::make_pair("b0870bbf28451b1e9d3e3be02e1e0f07a798848d",24695    * COIN),
-    std::make_pair("6078d5a9f79f21bf5048c7fdc198544764f16475",24695    * COIN),
-    //wallet-3~11    
-    std::make_pair("f0663080bb673560fb78199fc0fa732aa74754db",5000     * COIN),
-    std::make_pair("2c350727f4458d6bad11ca6b99716264ed6c8c7f",2000     * COIN),
-    std::make_pair("efcc93c50e9d3a6312593c5a87715c82e008d99f",2000     * COIN),
-    std::make_pair("c5b9590ec3adaf352c662515dd0f91c59497777f",1000     * COIN),
-    std::make_pair("0ef4d981b631a96e70fd3cadab529935f34d6cfb",1000     * COIN),
-    std::make_pair("4d49ad3b9ca241e45c605e6a26bfcd621b98c81d",500     * COIN),
-    std::make_pair("9c33394ac8c49b38824f8e89f21e0bb246d24576",500     * COIN),
-    std::make_pair("036164a58c79d25fa35381648e42cb90e298ced7",100     * COIN),
-    std::make_pair("4aba7cf3146da95e39743f5c59e0ee41c6082b3c",100     * COIN),
+    std::make_pair("072a6f113f219ce075129a8de051b4e30e8637b1",5000    * COIN),
+    std::make_pair("0e3cc5c13ded120fa723c5a0d34990e3e214856f",5000    * COIN),
+    std::make_pair("fe3e724d5621d89210427b07623723e4e54cc565",5000    * COIN),
+    std::make_pair("b0870bbf28451b1e9d3e3be02e1e0f07a798848d",5000    * COIN),
+    std::make_pair("6078d5a9f79f21bf5048c7fdc198544764f16475",5000    * COIN),
+    //wallet-3~10    
+    std::make_pair("f0663080bb673560fb78199fc0fa732aa74754db",100000     * COIN),
+    std::make_pair("2c350727f4458d6bad11ca6b99716264ed6c8c7f",100000     * COIN),
+    std::make_pair("efcc93c50e9d3a6312593c5a87715c82e008d99f",100000     * COIN),
+    std::make_pair("c5b9590ec3adaf352c662515dd0f91c59497777f",100000     * COIN),
+    std::make_pair("0ef4d981b631a96e70fd3cadab529935f34d6cfb",100000     * COIN),
+    std::make_pair("4d49ad3b9ca241e45c605e6a26bfcd621b98c81d",100000     * COIN),
+    std::make_pair("9c33394ac8c49b38824f8e89f21e0bb246d24576",100000     * COIN),
+    std::make_pair("036164a58c79d25fa35381648e42cb90e298ced7",100000     * COIN),
 };
 const size_t nGenesisOutputs = sizeof(genesisOutputs) / sizeof(genesisOutputs[0]);
 
@@ -350,7 +349,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "The Times 11:00:00 13/05/2019 created by jiuling vpubchain";
+    const char *pszTimestamp = "China issues 5G licenses today ";
 
     CMutableTransaction txNew;
     txNew.nVersion = VPUB_TXN_VERSION;
@@ -493,7 +492,7 @@ public:
         m_assumed_chain_state_size = 1;
 
         //genesis = CreateGenesisBlockMainNet(1500296400, 31429, 0x1f00ffff); // 2017-07-17 13:00:00
-        genesis = CreateGenesisBlockMainNet(1557730800, 24065,  0x1f00ffff); // 2019-05-1 11:00:00
+        genesis = CreateGenesisBlockMainNet(1559786400, 24065,  0x1f00ffff); // 2019-06-06 10:00:00
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -540,8 +539,7 @@ public:
         //vSeeds.emplace_back("mainnet-seed.vpub.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vpub.io");
         //vSeeds.emplace_back("mainnet.vpub.io");
-        vSeeds.emplace_back("47.105.68.82");
-        vSeeds.emplace_back("47.105.157.227");
+        vSeeds.emplace_back("52.82.7.73");
 
 
         vDevFundSettings.emplace_back(0,
@@ -605,7 +603,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1557730800,
+            /* nTime    */ 1559786400,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
