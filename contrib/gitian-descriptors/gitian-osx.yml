@@ -1,5 +1,5 @@
 ---
-name: "vpub-osx-0.18.0.4"
+name: "vpub-osx-0.19.0.1"
 enable_cache: true
 suites:
 - "bionic"
