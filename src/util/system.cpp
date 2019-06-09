@@ -1442,7 +1442,7 @@ int GetNumCores()
 std::string CopyrightHolders(const std::string& strPrefix)
 {
     const int BTC_START_YEAR = 2009;
-    const int PART_START_YEAR = 2017;
+    const int PART_START_YEAR = 2019;
 
     std::string sRange = PART_START_YEAR == COPYRIGHT_YEAR
         ? strprintf(" %i ", COPYRIGHT_YEAR)
